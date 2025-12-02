@@ -1,0 +1,83 @@
+# Auto-generated config for ECUADOR IMPORT FULL
+# Source: Equador Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: ECUADOR
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ID
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: ARRIVAL_DATE
+  qty_raw: NET_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: USD_CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: ECUADOR
+  direction: IMPORT
+  destination_country_raw: ECUADOR
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.887323'
+  source_file: Equador Import F.xlsx
+  detected_columns:
+  - AD_VALOREM_RATE
+  - ARRIVAL_DATE
+  - BL_NUMBER
+  - BRAND
+  - COMMERCIAL_DEPOSIT
+  - CONDITION
+  - CONOCIMIENTO_EMB
+  - CONTAINER
+  - CUSTOMS
+  - CUSTOMS_AGENCY
+  - CUSTOMS_AGENT
+  - DECLARATION_NUMBER_DAU
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMPORT_TYPE
+  - IMP_DATE
+  - ITEM_NUMBER
+  - LOADING_COUNTRY
+  - LOADING_PORT
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PACKAGES
+  - PROCEDENCE_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REFRENDO
+  - SHIP
+  - SHIPPING_AGENCY
+  - SUPPLIER_NAME
+  - TRANSPORT_TYPE
+  - UNIT
+  - USD_CIF
+  - USD_FOB
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - IMPORTER_NAME_EN
+  needs_review: true

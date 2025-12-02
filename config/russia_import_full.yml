@@ -1,0 +1,88 @@
+# Auto-generated config for RUSSIA IMPORT FULL
+# Source: Russia Import Full.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: RUSSIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_CODE
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMP_DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: CURRENCY_OF_CONTRACT_PRICE
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: RUSSIA
+  direction: IMPORT
+  destination_country_raw: RUSSIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.036165'
+  source_file: Russia Import Full.xlsx
+  detected_columns:
+  - RECORDS_TAG
+  - DECLARATION_NUMBER
+  - IMP_DATE
+  - SUPPLIER_NAME
+  - SUPPLIER_ADDRESS
+  - IMPORTER_CODE
+  - IMPORTER_NAME
+  - IMPORTER_NAME_EN
+  - IMPORTER_ADDRESS
+  - IMPORTER_ADDRESS_EN
+  - CUSTOMS_CODE
+  - CUSTOMS_INN_CODE
+  - IMPORT_PORT
+  - IMPORT_PORT_EN
+  - CURRENCY_OF_CONTRACT_PRICE
+  - WAREHOUSE_OF_IMPORTER
+  - ITEM_NUMBER
+  - INVOICE_NUMBER
+  - MANIFEST_DATE
+  - DESTINATION_COUNTRY
+  - ORIGIN_COUNTRY
+  - BRAND
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - UNIT
+  - GROSS_WEIGHT_KG
+  - NET_WEIGHT_KG
+  - CUSTOMS_COST_VALUE_RUB
+  - INVOICE_VALUE_RUB
+  - CURRENCY_UNIT
+  - USD_PER_KG
+  - TOTAL_VALUE_USD
+  - INCOTERMS
+  - MANUFACTURER
+  - CUSTOMS_BROKER_NAME
+  - CUSTOMS_BROKER_CODE
+  - CUSTOMS_PROCEDURE_CODE
+  - CUSTOMS_DECLARANT_NAME
+  - CONTAINER_QUANTITY
+  - PACKAGES
+  - HS_CODE_2
+  - HS_CODE_4
+  - COUNTRY_ISO_CODE_2
+  - RECORD_ID
+  needs_review: true

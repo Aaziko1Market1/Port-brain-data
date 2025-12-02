@@ -1,0 +1,152 @@
+# Indonesia Import FULL Format Configuration
+# Source: Indonesia Customs Import Data - Full/Detailed Format
+# File pattern: Indonesia Import F.xlsx
+
+reporting_country: "INDONESIA"
+direction: "IMPORT"
+source_format: "FULL"
+record_grain: "LINE_ITEM"
+value_type: "CIF"
+
+# Excel file structure
+header_row: 6  # 1-indexed (row 6 contains headers)
+data_start_row: 7  # First data row
+
+# Column mappings - using EXACT header names from the file
+# Columns: IMP DATE, HS CODE, IMPORTER ID, IMPORTER NAME, IMPORTER ADDRESS,
+#          SUPPLIER NAME, SUPPLIER ADDRESS, SUPPLIER COUNTRY, EXPORTER NAME, EXPORTER ADDRESS,
+#          EXPORTER COUNTRY, PRODUCT DESCRIPTION, QUANTITY, UNIT, PACKAGES, TYPE OF PACKAGE,
+#          NET WEIGHT IN KG, GROSS WEIGHT IN KG, CIF HDR, CIF VALUE CURRENCY, CIF VALUE USD,
+#          UNIT PRICE USD, CURRENCY, ORIGIN COUNTRY, NETTO HDR, INSURANCE, LOADING PORT,
+#          UNLOADING PORT, CARRIER NAME, DATA CODE, FREIGHT, TRANS TYPE, HS CODE DESCRIPTION,
+#          HS CODE 2, HS CODE 4, COUNTRY ISO CODE 2
+column_mapping:
+  # Entity information
+  buyer_name_raw: "IMPORTER NAME"
+  buyer_address_raw: "IMPORTER ADDRESS"
+  buyer_tax_id_raw: "IMPORTER ID"
+  
+  supplier_name_raw: "SUPPLIER NAME"
+  supplier_address_raw: "SUPPLIER ADDRESS"
+  supplier_country_raw: "SUPPLIER COUNTRY"
+  
+  # Exporter (alternative supplier info)
+  exporter_name: "EXPORTER NAME"
+  exporter_address: "EXPORTER ADDRESS"
+  exporter_country: "EXPORTER COUNTRY"
+  
+  # Product classification
+  hs_code_raw: "HS CODE"
+  hs_code_2: "HS CODE 2"
+  hs_code_4: "HS CODE 4"
+  goods_description: "PRODUCT DESCRIPTION"
+  hs_code_description: "HS CODE DESCRIPTION"
+  
+  # Geography
+  origin_country_raw: "ORIGIN COUNTRY"
+  # destination_country not in file - use default
+  loading_port_raw: "LOADING PORT"
+  unloading_port_raw: "UNLOADING PORT"
+  
+  # Dates
+  import_date_raw: "IMP DATE"
+  
+  # Quantities and weights
+  qty_raw: "QUANTITY"
+  qty_unit_raw: "UNIT"
+  net_weight_kg: "NET WEIGHT IN KG"
+  gross_weight_kg: "GROSS WEIGHT IN KG"
+  packages: "PACKAGES"
+  type_of_package: "TYPE OF PACKAGE"
+  
+  # Values - CIF (Cost, Insurance, Freight)
+  value_raw: "CIF VALUE USD"  # Main value field (already in USD)
+  cif_hdr: "CIF HDR"
+  cif_currency: "CIF VALUE CURRENCY"
+  unit_price_usd: "UNIT PRICE USD"
+  currency: "CURRENCY"
+  
+  # Additional costs
+  freight: "FREIGHT"
+  insurance: "INSURANCE"
+  
+  # Shipping details
+  carrier_name: "CARRIER NAME"
+  trans_type: "TRANS TYPE"
+  data_code: "DATA CODE"
+  
+  # ISO codes
+  country_iso_code_2: "COUNTRY ISO CODE 2"
+
+# Data defaults and conversions
+defaults:
+  destination_country_raw: "INDONESIA"
+  destination_country: "INDONESIA"
+  reporting_country: "INDONESIA"
+  direction: "IMPORT"
+
+# Unit conversions
+unit_conversions:
+  # Weight units
+  KGM:
+    is_weight: true
+    to_kg_multiplier: 1.0
+  KG:
+    is_weight: true
+    to_kg_multiplier: 1.0
+  TNE:
+    is_weight: true
+    to_kg_multiplier: 1000.0
+  GRM:
+    is_weight: true
+    to_kg_multiplier: 0.001
+  MT:
+    is_weight: true
+    to_kg_multiplier: 1000.0
+  
+  # Volume units
+  LTR:
+    is_weight: false
+    estimate_kg_per_unit: 1.0
+  
+  # Count units
+  PCS:
+    is_weight: false
+    estimate_kg_per_unit: null
+  SET:
+    is_weight: false
+    estimate_kg_per_unit: null
+  UNIT:
+    is_weight: false
+    estimate_kg_per_unit: null
+  
+  # Default
+  DEFAULT:
+    is_weight: false
+    estimate_kg_per_unit: null
+
+# Value currency
+value_currency:
+  local: "IDR"  # Indonesian Rupiah
+  usd: "USD"
+
+# Date formats
+date_formats:
+  - "%Y-%m-%d"
+  - "%d/%m/%Y"
+  - "%Y/%m/%d"
+  - "%d-%m-%Y"
+
+# Data quality rules
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: true
+  require_origin_country: false  # May be missing, use SUPPLIER COUNTRY as fallback
+  require_quantity: true
+  min_value_usd: 0.01
+  max_hs_code_length: 10
+
+# Weight handling - Indonesia FULL has NET WEIGHT IN KG column
+# Use this directly for qty_kg when available
+weight_column: "NET WEIGHT IN KG"

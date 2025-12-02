@@ -1,0 +1,86 @@
+# Auto-generated config for ZIMBABWE IMPORT FULL
+# Source: Zimbabwe Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: ZIMBABWE
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_BP
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_BP
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: SUPP_UNITS
+  value_raw: CIF_VALUE
+  origin_country_raw: COUNTRY_OF_ORIGIN_CODE
+  destination_country_raw: COUNTRY_DESTINATION_CODE
+defaults:
+  reporting_country: ZIMBABWE
+  direction: IMPORT
+  destination_country_raw: ZIMBABWE
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.131123'
+  source_file: Zimbabwe Import F.xlsx
+  detected_columns:
+  - ACCOUNT_CODE
+  - ASSEMENT_NUMBER
+  - CIF_VALUE
+  - CIF_VALUE_IN_USD
+  - COUNTRY_DESTINATION_CODE
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_LAST_CONSIGNMENT
+  - COUNTRY_OF_ORIGIN_CODE
+  - CURRENCY
+  - CUSTOMS_DUTY
+  - DECLARANT
+  - DECLARANT_BP
+  - DELIVERY_TERM_CODE
+  - DELIVERY_TERM_PLACE
+  - EXCHANGE_RATE
+  - EXCISE
+  - GROSS_WEIGHT
+  - GUARANTEE_AMOUNT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_BP
+  - IMPORTER_NAME
+  - IMP_DATE
+  - INSTANCE_ID
+  - INVOICE_VALUE
+  - ITEM
+  - MODE_OF_PAYMENT
+  - MODE_OF_TRANSPORT
+  - NET_MASS
+  - NUMBER_OF_PACKAGES
+  - OFFICE_CODE
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - RECEIPT_DATE
+  - RECEIPT_NO
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - SUPP_UNITS
+  - SUPP_VALUE
+  - SURTAX
+  - UNIT_PRICE
+  - VAT_AMOUNT
+  needs_review: true

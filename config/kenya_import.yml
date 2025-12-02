@@ -1,0 +1,55 @@
+# GTI-OS Standardization Mapping - Kenya Import Data
+# Maps raw column names from Kenyan import files to standardized schema
+
+reporting_country: "KENYA"
+direction: "IMPORT"
+source_format: "FULL"
+
+# Column mapping: standardized_field -> raw_column_name
+column_mapping:
+  # Entity names
+  buyer_name_raw: "buyer_name"
+  supplier_name_raw: "supplier_name"
+  
+  # Product classification
+  hs_code_raw: "hs_code"
+  goods_description: "goods_description"
+  
+  # Geography
+  origin_country_raw: "origin_country"
+  destination_country_raw: "destination_country"
+  
+  # Dates
+  export_date_raw: null  # Not typically available in import data
+  import_date_raw: "shipment_date"  # Kenya uses shipment_date for imports
+  shipment_date_raw: "shipment_date"
+  
+  # Quantities
+  qty_raw: "quantity_kg"
+  qty_unit_raw: "unit"
+  
+  # Values
+  value_raw: "fob_value_usd"
+  
+  # Logistics
+  vessel_name: "vessel_name"
+  container_id: "container_id"
+  port_loading: "port_loading"
+  port_unloading: "port_unloading"
+
+# Unit specifications
+units:
+  weight_unit: "KG"
+  value_currency: "USD"
+
+# Value type
+value_type: "CIF"  # Kenya import data typically uses CIF
+
+# Default values
+defaults:
+  destination_country: "KENYA"  # Always KENYA for imports
+
+# Notes:
+# - Kenya import data uses CIF values (Cost, Insurance, Freight)
+# - Destination is always Kenya
+# - Origin country varies by supplier

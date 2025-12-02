@@ -1,0 +1,50 @@
+# Auto-generated config for BRAZIL_BL IMPORT SHORT
+# Source: Brazil BL Import S.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: BRAZIL BL
+direction: IMPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: CONSIGNEE_NAME
+  supplier_name_raw: TODO_SUPPLIER
+  hs_code_raw: HS_CODE
+  import_date_raw: TODO_DATE_COLUMN
+  qty_raw: TOTALGROSS_WEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTALVALUE_IN_USD
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: BRAZIL BL
+  direction: IMPORT
+  destination_country_raw: BRAZIL BL
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.832906'
+  source_file: Brazil BL Import S.xlsx
+  detected_columns:
+  - FORWARDER
+  - CONSIGNEE_NAME
+  - HS_CODE
+  - HS_DESCRIPTION
+  - TOTALVALUE_IN_USD
+  - VALUE_IN_USDPERCENTAGE
+  - TOTALGROSS_WEIGHT
+  - GROSS_WEIGHTPERCENTAGE
+  - MONTHYEAR
+  needs_review: true

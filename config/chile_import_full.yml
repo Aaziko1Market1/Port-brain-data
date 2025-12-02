@@ -1,0 +1,91 @@
+# Auto-generated config for CHILE IMPORT FULL
+# Source: Chile Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: CHILE
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ECONOMIC_KEY
+  supplier_name_raw: TODO_SUPPLIER
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ECONOMIC_KEY
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: USD_CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: CHILE
+  direction: IMPORT
+  destination_country_raw: CHILE
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.855196'
+  source_file: Chile Import F.xlsx
+  detected_columns:
+  - BRAND
+  - COUNTRY_ISO_CODE_2
+  - CUSTOM
+  - ECONOMIC_ZONE
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_ECONOMIC_KEY
+  - IMPORTER_ID_CHECK_DIGIT
+  - IMPORTER_NAME
+  - IMPORT_ID
+  - IMP_DATE
+  - INCOTERM
+  - LANDING_PORT
+  - LOAD_TYPE
+  - MANIFEST_DATE
+  - MANIFEST_NUMBER
+  - ORIGIN_COUNTRY
+  - ORIGIN_PORT
+  - PACKAGES_QUANTITY
+  - PACKAGE_TYPE
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_1
+  - PRODUCT_DESCRIPTION_2
+  - PRODUCT_DESCRIPTION_3
+  - PRODUCT_DESCRIPTION_4
+  - PURCHASE_COUNTRY
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - TAX_PERCENTAGE
+  - TRANSPORT_COMPANY
+  - TRANSPORT_COMPANY_COUNTRY
+  - TRANSPORT_DOCUMENT_DATE
+  - TRANSPORT_DOCUMENT_NUMBER
+  - TRANSPORT_TYPE
+  - TYPE_OF_PAYMENT
+  - UNIT
+  - USD_CIF
+  - USD_CIF_PER_UNIT
+  - USD_FOB
+  - USD_FOB_PER_UNIT
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - USD_TAX
+  - VARIETY
+  - IMPORTER_ID
+  - IMPORTER_NAME_EN
+  needs_review: true

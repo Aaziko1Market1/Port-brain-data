@@ -1,0 +1,80 @@
+# Auto-generated config for BANGLADESH IMPORT FULL
+# Source: Bangladesh Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: BANGLADESH
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: EXPORTER_NAME_AND_ADDRESS
+  hs_code_raw: HS_CODE
+  import_date_raw: BILL_OF_ENTRY_DATE
+  qty_raw: GROSS_WEIGHT_IN_KG
+  qty_unit_raw: ASSESSED_UNIT_PRICE_FC
+  value_raw: ASSESSED_UNIT_PRICE_FC
+  origin_country_raw: COUNTRY_OF_ORIGIN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: BANGLADESH
+  direction: IMPORT
+  destination_country_raw: BANGLADESH
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.814648'
+  source_file: Bangladesh Import F.xlsx
+  detected_columns:
+  - AGENT_IDENTIFICATION_NUMBER
+  - ASSESSED_UNIT_PRICE_FC
+  - ASSESSED_VALUE_TK
+  - ASSESSED_VALUE_USD
+  - BANK_NAME
+  - BILL_OF_ENTRY
+  - BILL_OF_ENTRY_DATE
+  - BILL_OF_ENTRY_NO
+  - BL_NUMBER
+  - BRANCH_NAME
+  - BUSINESS_IDENTIFICATION_NUMBER
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_ORIGIN
+  - CPC_CODE_AND_DESCRIPTION
+  - CURRENCY_CODE
+  - CUSTOM_VALUE
+  - DECLARED_UNIT_PRICE_FC
+  - EXCHANGE_RATE
+  - EXPORTER_NAME_AND_ADDRESS
+  - GROSS_WEIGHT_IN_KG
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_ADDRESS
+  - IMPORTER_NAME
+  - IMP_DATE
+  - INVOICE_NUMBER
+  - INVOICE_VALUE_FC
+  - LC_NUMBER
+  - MENIFEST_NO
+  - NAME_OF_CF_AGENT
+  - NET_WEIGHT_IN_KG
+  - OFFICE_CODE_AND_NAME
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_TYPE
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  needs_review: true

@@ -1,0 +1,76 @@
+# Auto-generated config for BRAZIL_BL IMPORT FULL
+# Source: Brazil BL Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: BRAZIL BL
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: CONSIGNEE_ADDRESS
+  supplier_name_raw: SHIPPER_ADDRESS
+  hs_code_raw: HS_CODE
+  import_date_raw: SHIPMENT_DATE
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: VALUE_IN_USD
+  origin_country_raw: ORIGIN_PLACE
+  destination_country_raw: PORT_OF_MARITIME_DESTINATION
+defaults:
+  reporting_country: BRAZIL BL
+  direction: IMPORT
+  destination_country_raw: BRAZIL BL
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.831359'
+  source_file: Brazil BL Import F.xlsx
+  detected_columns:
+  - CARGO_TYPE
+  - CARRIER
+  - CONSIGNEE_ADDRESS
+  - CONSIGNEE_COUNTRY
+  - CONSIGNEE_NAME
+  - CONTAINER_LOAD_TYPE
+  - CONTAINER_NUMBER_20
+  - CONTAINER_NUMBER_40
+  - CONTAINER_TYPE
+  - DELIVERY_POINT
+  - FORWARDER
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IMP_OR_EXP
+  - METRIC_TONS
+  - NORTIFY_PARTY_NAME
+  - ORIGIN_PLACE
+  - ORIGIN_PORT
+  - PORT_OF_MARITIME_DESTINATION
+  - PORT_OF_MARITIME_ORIGIN
+  - PRODUCT_DESCRIPTION
+  - RECORDS_TAG
+  - RECORD_ID
+  - SHIPMENT_DATE
+  - SHIPPER_ADDRESS
+  - SHIPPER_COUNTRY
+  - SHIPPER_NAME
+  - TEU
+  - TRANSPORT
+  - UNLOADING_PORT
+  - VALUE_IN_USD
+  - VESSEL_NAME
+  needs_review: true

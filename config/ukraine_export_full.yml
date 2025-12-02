@@ -1,0 +1,76 @@
+# Auto-generated config for UKRAINE EXPORT FULL
+# Source: Ukraine Export Full.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: UKRAINE
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: CONSIGNEE_CONTRACT_HOLDER
+  supplier_name_raw: EXPORTER_CODE
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_CODE
+  qty_raw: NET_WEIGHT_KG
+  qty_unit_raw: UNIT
+  value_raw: CUSTOMS_VALUE_USD
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: UKRAINE
+  direction: EXPORT
+  origin_country_raw: UKRAINE
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.089327'
+  source_file: Ukraine Export Full.xlsx
+  detected_columns:
+  - HS_CODE
+  - CONSIGNEE_CONTRACT_HOLDER
+  - CONSIGNEE_NAME
+  - CONSIGNEE_NAME_EN
+  - CONTRACT_HOLDER_CODE
+  - COUNTRY_ISO_CODE_2
+  - CUSTOMS_CLEARANCE
+  - CUSTOMS_VALUE_USD
+  - CUSTOM_OFFICE_CODE
+  - DECLARATION_TYPE
+  - DELIVERY_BASIS
+  - DESTINATION_COUNTRY
+  - EXPORTER_CODE
+  - EXPORTER_NAME_AND_ADDRESS
+  - EXP_DATE
+  - GTD_NO
+  - HS_CODE_2
+  - HS_CODE_4
+  - INVOICE_VALUE_USD
+  - ITEM_NO
+  - MODE
+  - NET_WEIGHT_KG
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - STD_EXPORTER_ADDRESS
+  - STD_EXPORTER_NAME
+  - TRANSPORT_AT_THE_BORDER
+  - TRANSPORT_IN_UKRAINE
+  - UKRAINIAN_CONTRACT_HOLDER_NAME_AND_ADDRESS
+  - UKRAINIAN_CONTRACT_HOLDER_NAME_AND_ADDRESS_EN
+  - UNIT
+  - HS_CODE_DESCRIPTION
+  needs_review: true

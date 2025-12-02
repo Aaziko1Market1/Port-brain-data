@@ -1,0 +1,70 @@
+# Auto-generated config for MONGOLIA EXPORT FULL
+# Source: Mongolia Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MONGOLIA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXP_DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: AMOUNT_USD
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: MONGOLIA
+  direction: EXPORT
+  origin_country_raw: MONGOLIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.962232'
+  source_file: Mongolia Export F.xlsx
+  detected_columns:
+  - RECORD_ID
+  - RECORDS_TAG
+  - EXP_DATE
+  - DECLARATION_NO
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - BUYER_NAME
+  - BUYER_NAME_EN
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - HS_CODE_DESCRIPTION_EN
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - BRAND_MODEL
+  - BRAND_MODEL_EN
+  - MANUFACTURER
+  - MANUFACTURER_EN
+  - QUANTITY
+  - UNIT
+  - UNIT_EN
+  - AMOUNT_USD
+  - UNIT_PRICE_USD
+  - DESTINATION_COUNTRY
+  - DESTINATION_COUNTRY_EN
+  - PORT
+  - INCOTERM
+  - HS_CODE_2
+  - HS_CODE_4
+  - COUNTRY_ISO_CODE_2
+  needs_review: true

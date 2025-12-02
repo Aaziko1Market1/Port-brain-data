@@ -1,0 +1,67 @@
+# Auto-generated config for NIGERIA EXPORT FULL
+# Source: Nigeria Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: NIGERIA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_ADDRESS
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: NET_WEIGHT_IN_KG
+  qty_unit_raw: TODO_UNIT
+  value_raw: CIF_IN_NIGERIA
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: NIGERIA
+  direction: EXPORT
+  origin_country_raw: NIGERIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.985576'
+  source_file: Nigeria Export F.xlsx
+  detected_columns:
+  - AGENT_NAME
+  - BUYER_ADDRESS
+  - BUYER_NAME
+  - CIF_IN_NIGERIA
+  - CIF_USD
+  - CPC
+  - CURRENCY
+  - CURRENCY_RATE
+  - CUSTOMS
+  - DESTINATION_COUNTRY
+  - EXPORTER_NAME
+  - FOB_IN_FC
+  - FOB_IN_NIGERIA
+  - FOB_USD
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - ITEMS
+  - NET_WEIGHT_IN_KG
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGISTRY_DATE
+  - SERVICE
+  - VESSEL
+  needs_review: true

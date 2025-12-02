@@ -1,0 +1,114 @@
+# Auto-generated config for RWANDA EXPORT FULL
+# Source: Rwanda Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: RWANDA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: DATE_LIQUIDATION
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: RWANDA
+  direction: EXPORT
+  origin_country_raw: RWANDA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.040177'
+  source_file: Rwanda Export F.xlsx
+  detected_columns:
+  - AGREMENT
+  - AUO
+  - BUYER_NAME
+  - CATEGORY
+  - CHAPTER
+  - CIF
+  - CIF_USD
+  - CLEARING_AGENCY_NAME
+  - CLEARING_CODE
+  - COMPUTER_FEES
+  - CPC_GEN
+  - CPC_NAT
+  - CUSTOMS_BORDER_POST
+  - DATE_LIQUIDATION
+  - DATE_QUITTANCE
+  - DESTINATION_COUNTRY
+  - ELEVEN_DIGITS
+  - EXCISE_DUTY
+  - EXIT_OFFICE
+  - EXPORTER_NAME
+  - EXP_DATE
+  - FLUX_1
+  - FLUX_2
+  - FOB
+  - FOB_USD
+  - FOUR_DIGITS
+  - FREIGHT
+  - GROSS_WEIGHT
+  - HEADING
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IDL
+  - IMPORTS_DUTY
+  - INLAND
+  - INSURANCE
+  - ITEM_NUMBER
+  - MANIFESTE
+  - MOT
+  - MVF
+  - NATIONALITY_VEHICLE
+  - NET_WEIGHT
+  - NO_LICENCE
+  - NO_LIQUIDATION
+  - NO_PLATE
+  - NO_QUITTANCE
+  - NO_SAD
+  - NUMBER_OF_PACKAGE
+  - OFFICE
+  - ORIGIN_COUNTRY
+  - OTHER_COSTS
+  - PRECLEANCE
+  - PREVIOUS_DOCUMENT
+  - PRODUCT_DESCRIPTION
+  - PROVINCE_COUNTRY
+  - PUBLIC_WAREHOUSE
+  - PV
+  - QUALITY_INSPECTION_FEES
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGIME
+  - SERIE_FLOW
+  - SERIE_LIQUIDATION
+  - SERIE_QUITTANCE
+  - TARIFF_RATE
+  - TIN
+  - TOTAL_DUTY_AND_TAXES
+  - UNIT
+  - VAT
+  - WAREHOUSE
+  - WHT
+  needs_review: true

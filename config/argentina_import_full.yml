@@ -1,0 +1,80 @@
+# Auto-generated config for ARGENTINA IMPORT FULL
+# Source: Argentina Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: ARGENTINA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ID
+  supplier_name_raw: TODO_SUPPLIER
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ID
+  qty_raw: COMMERCIAL_QUANTITY
+  qty_unit_raw: COMMERCIAL_UNIT
+  value_raw: CIF_ITEM
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: ARGENTINA
+  direction: IMPORT
+  destination_country_raw: ARGENTINA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.792105'
+  source_file: Argentina Import F.xlsx
+  detected_columns:
+  - ADQ_COUNTRY
+  - ATTRIBUTES
+  - BRAND
+  - CIF_ITEM
+  - COMMERCIAL_QUANTITY
+  - COMMERCIAL_UNIT
+  - COUNTRY_ISO_CODE_2
+  - CUSTOM
+  - EMBARQ_PORT
+  - FOB_ITEM
+  - FREIGHT_ITEM
+  - FREIGHT_USD
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMPORT_ID
+  - IMP_DATE
+  - INCOTERMS
+  - INSURANCE_ITEM
+  - INSURANCE_USD
+  - ITEM_NUMBER
+  - NUMBER_OF_PACKAGES
+  - OPERATION_TYPE
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY_SUB_ITEM
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUB_ITEM_NUMBER
+  - TOTAL_CIF
+  - TOTAL_FOB
+  - TYPE_OF_TRANSPORT
+  - USD_FOB_SUB_ITEM
+  - VARIETY
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_NAME_EN
+  needs_review: true

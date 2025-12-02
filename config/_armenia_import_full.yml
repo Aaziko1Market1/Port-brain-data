@@ -1,0 +1,94 @@
+# Auto-generated config for _ARMENIA IMPORT FULL
+# Source: _Armenia Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: ' ARMENIA'
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER NAME
+  supplier_name_raw: SUPPLIER NAME
+  hs_code_raw: HS CODE
+  import_date_raw: IMPORTER NAME
+  qty_raw: GROSS WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: INVOICE AMOUNT
+  origin_country_raw: ORIGIN COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: ' ARMENIA'
+  direction: IMPORT
+  destination_country_raw: ' ARMENIA'
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.136151'
+  source_file: _Armenia Import F.xlsx
+  detected_columns:
+  - RECORD ID
+  - RECORDS TAG
+  - SUPPLIER NAME
+  - SUPPLIER NAME EN
+  - TAX ID NUMBER
+  - IMPORTER NAME
+  - IMPORTER NAME EN
+  - PROCEDURE CODE
+  - CUSTOMS POINT CODE
+  - ASSESSMENT DATE
+  - DECLARATION NUMBER
+  - HS CODE
+  - PRODUCT DESCRIPTION
+  - PRODUCT DESCRIPTION EN
+  - ORIGIN COUNTRY
+  - EXPORT COUNTRY
+  - TRADE COUNTRY
+  - GROSS WEIGHT
+  - NET WEIGHT
+  - QUANTITY
+  - UNIT
+  - QUANTITY 2
+  - UNIT 2
+  - INVOICE AMOUNT
+  - CUSTOMS VALUE LC
+  - VAT
+  - CUSTOMS DUTY TAX
+  - EXCISE TAX
+  - ECOLOGY TAX
+  - ANTI DUMPING TAX
+  - TOTAL VALUE
+  - TOTAL VALUE 1
+  - TOTAL VALUE 2
+  - TOTAL VALUE 3
+  - TOTAL VALUE 4
+  - METHOD
+  - USD EXCHANGE RATE
+  - EURO EXCHANGE RATE
+  - INVOICE CURRENCY
+  - INVOICE RATE
+  - INCOTERM
+  - CUSTOMS TARIFF
+  - CUSTOMS TARIFF 1
+  - CUSTOMS BROKER
+  - CUSTOMS BROKER EN
+  - ITEM NUMBER
+  - PROCEDURE CODE MEANING
+  - HS DESCRIPTION
+  - INVOICE AMOUNT USD
+  - CUSTOMS VALUE USD
+  - HS CODE 2
+  - HS CODE 4
+  - COUNTRY ISO CODE 2
+  needs_review: true

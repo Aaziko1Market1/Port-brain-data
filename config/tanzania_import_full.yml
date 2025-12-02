@@ -1,0 +1,92 @@
+# Auto-generated config for TANZANIA IMPORT FULL
+# Source: Tanzania Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: TANZANIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: EXPORTER_TIN
+  hs_code_raw: HS_CODE
+  import_date_raw: EXPORTER_TIN
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: ASSESSED_CUSTOMS_VALUE
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: TANZANIA
+  direction: IMPORT
+  destination_country_raw: TANZANIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.067272'
+  source_file: Tanzania Import F.xlsx
+  detected_columns:
+  - APC_CD
+  - ASSESSED_CUSTOMS_VALUE
+  - BL_NO
+  - CLEARANCE_PLAN_CD
+  - CONTAINER_YN
+  - COUNTRY_ISO_CODE_2
+  - CRN
+  - CUSTOMS_OFFICE_CODE
+  - DECLARANT_NAME
+  - DECLARANT_TIN
+  - DECLARED_CUSTOMS_VALUE
+  - DESTINATION_COUNTRY
+  - ENTRY_OFFICE_CD
+  - EPC_CD
+  - EXPORTER_TIN
+  - EXTERNAL_FREIGHT_NAT_AMOUNT
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_NAME
+  - IMPORTER_TIN
+  - IMP_DATE
+  - INVOICE_CURRENCY
+  - INVOICE_RATE
+  - ITEM_CUSTOMS_VALUE
+  - ITEM_INVOICE_AMOUNT
+  - ITEM_NO
+  - ITEM_STATISTICAL_VALUE_USD
+  - ITEM_TAX_AMOUNT
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PROCESSING_STATUS_NM
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGIME_TP
+  - SELECTIVITY_RESULT_CD
+  - SUPPLIER_NAME
+  - TANSAD_NO
+  - TANSAD_SERIAL_NO
+  - TOTAL_CONTAINER_NO
+  - TRANSPORT_CODE_DESCRIPTION
+  - TRANSPORT_MEANS_ID
+  - TRANSPORT_MODE_CODE
+  - TRANSPORT_NATIONALITY_CD
+  - UNIT
+  - UNIT_ITEM_STATISTICAL_VALUE_USD
+  - VESSEL_NAME
+  needs_review: true

@@ -1,0 +1,72 @@
+# Auto-generated config for DOMINICAN_REPUBLIC EXPORT FULL
+# Source: Dominican republic Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: DOMINICAN REPUBLIC
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: RUC_EXPORTER_ID
+  hs_code_raw: HS_CODE
+  export_date_raw: DECLARATION_DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: USD_FOB
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: DOMINICAN REPUBLIC
+  direction: EXPORT
+  origin_country_raw: DOMINICAN REPUBLIC
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.875578'
+  source_file: Dominican republic Export F.xlsx
+  detected_columns:
+  - RECORD_ID
+  - RECORDS_TAG
+  - DECLARATION_DATE
+  - CUSTOMS_CLEARANCE
+  - CUSTOMS_CLEARANCE_EN
+  - SETTLEMENT_DATE
+  - DESTINATION_COUNTRY
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - UNIT
+  - NET_WEIGHT
+  - USD_FOB
+  - UNIT_FOB_USD
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - RUC_EXPORTER_ID
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - REGIME_CODE
+  - REGIME_NAME
+  - BUYER_NAME
+  - SHIPPING_LINE_CODE
+  - SHIPPING_LINE_NAME
+  - DESTINATION_CONTINENT_NAME
+  - DESTINATION_REGION_NAME
+  - HS_CODE_2
+  - HS_CODE_4
+  - COUNTRY_ISO_CODE_2
+  needs_review: true

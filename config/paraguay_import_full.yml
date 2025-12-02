@@ -1,0 +1,71 @@
+# Auto-generated config for PARAGUAY IMPORT FULL
+# Source: Paraguay Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PARAGUAY
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ID
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ID
+  qty_raw: GROSS_KILO
+  qty_unit_raw: MEASURE_UNIT
+  value_raw: USD_CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: PARAGUAY
+  direction: IMPORT
+  destination_country_raw: PARAGUAY
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.012059'
+  source_file: Paraguay Import F.xlsx
+  detected_columns:
+  - ACQUISITION_COUNTRY
+  - BL_NUMBER
+  - BRAND
+  - CUSTOM
+  - GROSS_KILO
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMP_DATE
+  - MANIFEST
+  - MEASURE_UNIT
+  - NET_KILO
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - TRANSPORT_COMPANY
+  - TRANSPORT_COUNTRY
+  - TRANSPORT_TYPE
+  - USD_CIF
+  - USD_FOB
+  - USD_FOB_UNIT
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - IMPORTER_NAME_EN
+  - HS_CODE_DESCRIPTION
+  needs_review: true

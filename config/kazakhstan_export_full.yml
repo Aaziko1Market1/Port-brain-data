@@ -1,0 +1,117 @@
+# Auto-generated config for KAZAKHSTAN EXPORT FULL
+# Source: Kazakhstan Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: KAZAKHSTAN
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_ADDRESS
+  supplier_name_raw: EXPORTER_ADDRESS
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_ADDRESS
+  qty_raw: G_WEIGHT
+  qty_unit_raw: UNIT_OF_QUANTITY
+  value_raw: CARGO_VALUE_IN_FC
+  origin_country_raw: FROM_COUNTRY_NAME
+  destination_country_raw: TO_COUNTRY_NAME
+defaults:
+  reporting_country: KAZAKHSTAN
+  direction: EXPORT
+  origin_country_raw: KAZAKHSTAN
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.916168'
+  source_file: Kazakhstan Export F.xlsx
+  detected_columns:
+  - BRAND
+  - BRAND_EN
+  - BUYER_ADDRESS
+  - BUYER_ADDRESS_EN
+  - BUYER_NAME
+  - BUYER_NAME_EN
+  - CARGO_VALUE_IN_FC
+  - CARGO_VALUE_KZT
+  - CARGO_VALUE_USD
+  - COST_ADJUST_METHOD_CODE
+  - COST_ADJUST_METHOD_NAME
+  - COST_ADJUST_METHOD_NAME_EN
+  - COUNTRY_ISO_CODE_2
+  - CUSTOMS_OFFICE_CODE
+  - CUSTOMS_OFFICE_NAME
+  - CUSTOMS_OFFICE_NAME_AT_BORDER
+  - CUSTOMS_OFFICE_NAME_AT_BORDER_EN
+  - CUSTOMS_OFFICE_NAME_EN
+  - CUSTOMS_PROCEDURE_CODE
+  - CUSTOMS_PROCEDURE_NAME
+  - CUSTOMS_VALUE_KZT
+  - CUSTOMS_VALUE_USD
+  - DECLARANT_ADDRESS
+  - DECLARANT_ADDRESS_EN
+  - DECLARANT_CODE
+  - DECLARANT_NAME
+  - DECLARANT_NAME_EN
+  - DECLARATION_NUMBER
+  - DIRECTION
+  - EXCHANGE_RATE
+  - EXPORTER_ADDRESS
+  - EXPORTER_ADDRESS_EN
+  - EXPORTER_CODE
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - FOREIGN_CURRENCY
+  - FROM_COUNTRY_NAME
+  - FROM_COUNTRY_NAME_EN
+  - GUARANTEE_ADDRESS
+  - GUARANTEE_ADDRESS_EN
+  - GUARANTEE_CODE
+  - GUARANTEE_NAME
+  - GUARANTEE_NAME_EN
+  - G_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - HS_CODE_DESCRIPTION_EN
+  - INCOTERMS
+  - MANUFACTURER
+  - MANUFACTURER_EN
+  - N_WEIGHT
+  - ORIGIN_COUNTRY_NAME
+  - ORIGIN_COUNTRY_NAME_EN
+  - PLACE_OF_DELIVERY
+  - PLACE_OF_DELIVERY_EN
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGISTRATION_DATE
+  - TOTAL_COST
+  - TOTAL_QUANTITY
+  - TO_COUNTRY_NAME
+  - TO_COUNTRY_NAME_EN
+  - TRADING_COUNTRY_NAME
+  - TRADING_COUNTRY_NAME_EN
+  - TRANS_TYPE_CROSS_BORDER_EN
+  - TRANS_TYPE_WITHIN_COUNTRY_EN
+  - UNIT_OF_QUANTITY
+  - VALUE_IN_FOREIGN_CURRENCY
+  - CUSTOMS_OFFICE_CODE_AT_BORDER
+  - TRANS_TYPE_CROSS_BORDER
+  - TRANS_TYPE_WITHIN_COUNTRY
+  needs_review: true

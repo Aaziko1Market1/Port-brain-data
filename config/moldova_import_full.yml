@@ -1,0 +1,66 @@
+# Auto-generated config for MOLDOVA IMPORT FULL
+# Source: Moldova Import Full.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MOLDOVA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: PRICE_LEI
+  origin_country_raw: COUNTRY_OF_ORIGIN_CODE
+  destination_country_raw: COUNTRY_OF_SHIPMENT_OR_DESTINATION
+defaults:
+  reporting_country: MOLDOVA
+  direction: IMPORT
+  destination_country_raw: MOLDOVA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.958223'
+  source_file: Moldova Import Full.xlsx
+  detected_columns:
+  - CONTRACTORS_NAME_AND_LOCATION
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_ORIGIN_CODE
+  - COUNTRY_OF_SHIPMENT_OR_DESTINATION
+  - COUNTRY_OF_SHIPMENT_OR_DESTINATION_CODE
+  - DECLARATION_TYPE
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_NAME
+  - IMP_DATE
+  - NUMBER_OF_SKU_IN_DECLARATION_FORM
+  - ORIGIN_COUNTRY
+  - PRICE_LEI
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - TOTAL_QUANTITY_OF_SKU
+  - UNIT
+  - UNIT_AVERAGE_PRICE_LEI
+  - UNIT_VALUE_IN_USD
+  - VALUE_IN_USD
+  needs_review: true

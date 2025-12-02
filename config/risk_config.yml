@@ -1,0 +1,82 @@
+# Risk Engine Configuration
+# =========================
+# All thresholds for risk scoring are defined here.
+# DO NOT change these values without explicit approval.
+# Behavior changes require QA verification.
+
+# Risk level thresholds (from numeric score)
+risk_level_bands:
+  critical: 80    # score >= 80 -> CRITICAL
+  high: 60        # score >= 60 -> HIGH
+  medium: 40      # score >= 40 -> MEDIUM
+  # else -> LOW
+
+# Price anomaly detection (Z-score thresholds)
+price_anomaly:
+  z_critical: 5.0      # |z| > 5 -> CRITICAL level
+  z_high: 3.0          # |z| > 3 -> HIGH level
+  z_medium: 2.0        # |z| > 2 -> MEDIUM level (minimum for flagging)
+  min_corridor_sample: 5   # Minimum sample size for corridor comparison
+
+# Price anomaly risk scores
+price_anomaly_scores:
+  z_gt_5: 90.0
+  z_gt_3: 70.0
+  z_gt_2: 50.0
+  z_default: 30.0
+
+# Ghost entity detection
+ghost_entity:
+  min_total_value_usd: 500000   # Minimum value to qualify as ghost candidate
+  
+# Ghost entity risk scores (based on volume)
+ghost_entity_scores:
+  value_5m_plus: 70.0       # $5M+ -> 70 risk score
+  value_1m_plus: 55.0       # $1M+ -> 55 risk score
+  value_default: 45.0       # else -> 45 risk score
+  confidence: 0.7           # Confidence for metadata-based rules
+
+# Free email risk
+free_email:
+  high_value_threshold: 500000   # $500K+ triggers higher risk
+  high_value_score: 40.0
+  low_value_score: 30.0
+
+# Volume spike detection
+volume_spike:
+  min_months_history: 3       # Minimum months needed for spike detection
+  z_threshold_flagging: 2.0   # Minimum z-score to flag
+  pct_change_flagging: 200    # Minimum % change to flag (200 = 3x)
+  
+  # Large buyer thresholds (Whale/Mid personas)
+  large_buyer:
+    z_critical: 4.0
+    z_high: 3.0
+    pct_critical: 500
+    pct_high: 300
+    score_critical: 50.0
+    score_high: 40.0
+    score_default: 30.0
+  
+  # Small buyer thresholds
+  small_buyer:
+    z_critical: 4.0
+    z_high: 3.0
+    pct_critical: 500
+    pct_high: 300
+    score_critical: 70.0
+    score_high: 55.0
+    score_default: 45.0
+  
+  confidence: 0.75
+
+# Confidence scores based on sample size
+confidence_from_sample:
+  - threshold: 10
+    score: 0.2
+  - threshold: 50
+    score: 0.5
+  - threshold: 200
+    score: 0.8
+  - threshold: null  # 200+
+    score: 0.95

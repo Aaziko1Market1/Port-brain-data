@@ -1,0 +1,68 @@
+# Auto-generated config for COLOMBIA EXPORT FULL
+# Source: Colombia Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: COLOMBIA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_ADDRESS
+  supplier_name_raw: EXPORTER_ADDRESS
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_ADDRESS
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: USD_FOB
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DEPARTMENT_DESTINATION
+defaults:
+  reporting_country: COLOMBIA
+  direction: EXPORT
+  origin_country_raw: COLOMBIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.858968'
+  source_file: Colombia Export F.xlsx
+  detected_columns:
+  - BUYER_ADDRESS
+  - BUYER_NAME
+  - CONTROL_ID
+  - COUNTRY_ISO_CODE_2
+  - CUSTOM
+  - DEPARTMENT_DESTINATION
+  - DESTINATION_COUNTRY
+  - EXPORTER_ADDRESS
+  - EXPORTER_ID
+  - EXPORTER_NAME
+  - EXP_DATE
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - METHOD_OF_PAYMENT
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SHIPMENT_AUTHORIZATION
+  - TYPE_OF_TRANSPORT
+  - UNIT
+  - USD_FOB
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - WEIGHT
+  - HS_CODE_DESCRIPTION
+  needs_review: true

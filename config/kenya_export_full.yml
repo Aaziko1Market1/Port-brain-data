@@ -1,0 +1,158 @@
+# Kenya Export FULL Format Configuration
+# Source: Kenya Revenue Authority (KRA) Export Data - Full Format
+# File pattern: Kenya Export F.xlsx
+
+reporting_country: "KENYA"
+direction: "EXPORT"
+source_format: "FULL"
+record_grain: "LINE_ITEM"
+
+# Excel file structure
+header_row: 6  # 1-indexed (row 6 contains headers)
+data_start_row: 7  # First data row
+
+# Column mappings - using EXACT header names from the file
+# Note: The ingested raw_data contains aggregated columns (TOTALQUANTITY, TOTALVALUE)
+# rather than the original Excel columns (QUANTITY, TOTAL_VALUE_USD)
+column_mapping:
+  # Entity information
+  # In exports: EXPORTER is the supplier (Kenyan company), BUYER is the foreign consignee
+  supplier_name_raw: "EXPORTER_NAME"
+  supplier_address_raw: "EXPORTER_ADDRESS"
+  supplier_tax_id_raw: "EXPORTER_PIN"
+  
+  buyer_name_raw: "BUYER_NAME"
+  buyer_address_raw: "BUYER_ADDRESS"
+  
+  # Agent/Broker information (optional)
+  agent_name: "AGENT_NAME"
+  agent_tax_id: "AGENT_PIN"
+  
+  # Product classification
+  hs_code_raw: "HS_CODE"
+  hs_code_2: "HS_CODE_2"
+  hs_code_4: "HS_CODE_4"
+  goods_description: "PRODUCT_DESCRIPTION"
+  hs_code_description: "HS_CODE_DESCRIPTION"
+  
+  # Geography
+  origin_country_raw: "ORIGIN_COUNTRY"
+  destination_country_raw: "DESTINATION_COUNTRY"
+  destination_port_raw: "DESTINATION_PORT"
+  port_of_discharge_raw: "PORT_OF_DISCHARGE"
+  
+  # Dates
+  export_date_raw: "EXP_DATE"
+  shipment_date_raw: "EXP_DATE"
+  year: "YEAR"
+  
+  # Quantities and values
+  qty_raw: "QUANTITY"
+  qty_unit_raw: "UNIT"
+  value_raw: "TOTAL_VALUE_USD"  # Main value field (already in USD)
+  
+  # Additional value fields (if available in raw Excel)
+  fob_value_raw: "FOB_FC"
+  value_usd_raw: "TOTAL_VALUE_USD"
+  
+  # Shipment details
+  bill_of_lading: "BILL_OF_LADING"
+  entry_number: "ENTRY_NO"
+  manifesto_number: "MANIFESTO_NO"
+  mode_of_transport: "MODE_OF_TRANSPORT"
+  
+  # Weights
+  gross_weight: "GROSS_WEIGHT"
+  net_weight: "NET_WEIGHT"
+  
+  # Exchange rate
+  exchange_rate: "EXCHANGE_RATE"
+  currency: "CURRENCY"
+  
+  # Internal tracking
+  record_id: "RECORD_ID"
+  records_tag: "RECORDS_TAG"
+
+# Data defaults and conversions
+defaults:
+  origin_country: "KENYA"  # Exports originate from Kenya
+  reporting_country: "KENYA"
+  direction: "EXPORT"
+
+# Unit conversions
+# Common Kenya units: KGM (kilograms), TNE (tonnes), PCS (pieces), LTR (liters), etc.
+unit_conversions:
+  # Weight units
+  KGM: 
+    is_weight: true
+    to_kg_multiplier: 1.0
+  TNE:
+    is_weight: true
+    to_kg_multiplier: 1000.0
+  GRM:
+    is_weight: true
+    to_kg_multiplier: 0.001
+  MT:
+    is_weight: true
+    to_kg_multiplier: 1000.0
+  
+  # Volume units (estimate weight for commodities)
+  LTR:
+    is_weight: false
+    estimate_kg_per_unit: 1.0  # Approximate for liquids
+  
+  # Area units (not weight - for tiles, fabric, etc.)
+  MTK:
+    is_weight: false
+    estimate_kg_per_unit: null
+  M2:
+    is_weight: false
+    estimate_kg_per_unit: null
+  
+  # Count units
+  PCS:
+    is_weight: false
+    estimate_kg_per_unit: null
+  NMB:
+    is_weight: false
+    estimate_kg_per_unit: null
+  DZN:
+    is_weight: false
+    estimate_kg_per_unit: null
+  
+  # Default if unit unknown
+  DEFAULT:
+    is_weight: false
+    estimate_kg_per_unit: null
+
+# Value currency and type
+value_currency:
+  local: "KES"  # Kenyan Shilling
+  usd: "USD"
+
+# Value type - Kenya export values are typically FOB
+value_type: "FOB"
+
+# Date formats
+date_formats:
+  - "%Y-%m-%d"  # 2025-10-31
+  - "%d/%m/%Y"  # 31/10/2025
+  - "%Y/%m/%d"  # 2025/10/31
+  - "%b %Y"     # Oct 2025 (from MONTHYEAR)
+
+# Data quality rules
+quality_rules:
+  require_hs_code: true
+  require_exporter: true
+  require_buyer: true
+  require_value: true
+  require_destination_country: true
+  require_quantity: true
+  min_value: 0.01
+  max_hs_code_length: 10
+
+# TEU estimation (for containerized goods)
+teu_estimation:
+  method: "value_based"  # value_based or weight_based
+  usd_per_teu: 15000  # Approximate average value per TEU
+  kg_per_teu: 15000   # Approximate average weight per TEU (15 tons)

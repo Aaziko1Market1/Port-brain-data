@@ -1,0 +1,72 @@
+# Auto-generated config for ARGENTINA EXPORT FULL
+# Source: Argentina Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: ARGENTINA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: TODO_BUYER
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: COMMERCIAL_QUANTITY
+  qty_unit_raw: COMMERCIAL_UNIT
+  value_raw: TOTAL_USD_CIF
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: COUNTRY_DESTINATION
+defaults:
+  reporting_country: ARGENTINA
+  direction: EXPORT
+  origin_country_raw: ARGENTINA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.787986'
+  source_file: Argentina Export F.xlsx
+  detected_columns:
+  - ATTRIBUTES
+  - BRAND
+  - COMMERCIAL_QUANTITY
+  - COMMERCIAL_UNIT
+  - COUNTRY_DESTINATION
+  - COUNTRY_ISO_CODE_2
+  - CUSTOM
+  - EXPORTER_NAME
+  - EXPORT_ID
+  - EXP_DATE
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - INCOTERM
+  - ITEM_NUMBER
+  - NUMBER_OF_PACKAGES
+  - OPERATION_TYPE
+  - PRODUCT_DESCRIPTION
+  - QUANTITY_SUB_ITEM
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUB_ITEM_NUMBER
+  - TOTAL_USD_CIF
+  - TOTAL_USD_FOB
+  - TYPE_OF_TRANSPORT
+  - USD_CIF_ITEM
+  - USD_FOB_ITEM
+  - USD_FOB_SUB_ITEM
+  - VARIETY
+  - HS_CODE_DESCRIPTION
+  needs_review: true

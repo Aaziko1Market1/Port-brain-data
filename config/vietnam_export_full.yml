@@ -1,0 +1,78 @@
+# Auto-generated config for VIETNAM EXPORT FULL
+# Source: Vietnam Export full.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: VIETNAM
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: EXPORTER_ADDRESS_EN
+  hs_code_raw: HS_CODE
+  export_date_raw: DECLARATION_DATE
+  qty_raw: QTY
+  qty_unit_raw: UNIT
+  value_raw: TOTAL_PRICE_IN_FOREIGN_CURRENCY
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: IMPORTER_COUNTRY
+defaults:
+  reporting_country: VIETNAM
+  direction: EXPORT
+  origin_country_raw: VIETNAM
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.119606'
+  source_file: Vietnam Export full.xlsx
+  detected_columns:
+  - COUNTRY_ISO_CODE_2
+  - CUSTOMS_OFFICE_NAME
+  - CUSTOMS_PROVINCE_NAME
+  - DECLARATION_DATE
+  - DECLARATION_NUMBER
+  - EXCHANGE_RATE
+  - EXPORTER_ADDRESS_EN
+  - EXPORTER_ADDRESS_VN
+  - EXPORTER_ID
+  - EXPORTER_NAME_EN
+  - EXPORTER_NAME_VN
+  - EXPORTER_PHONE
+  - EXPORTER_POSTAL_CODE
+  - EXPORT_TAX_RATE
+  - FOREIGN_CURRENCY
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ADDRESS
+  - IMPORTER_COUNTRY
+  - IMPORTER_NAME
+  - INCOTERMS
+  - PAYMENT_METHOD
+  - PRODUCT_DESC_EN
+  - PRODUCT_DESC_VN
+  - QTY
+  - RECORDS_TAG
+  - RECORD_ID
+  - TOTAL_PRICE_IN_FOREIGN_CURRENCY
+  - TOTAL_PRICE_IN_USD
+  - TRANS_TYPE_CODE
+  - TRANS_TYPE_NAME
+  - TYPE_OF_EXPORT
+  - UNIT
+  - UNIT_PRICE_IN_FOREIGN_CURRENCY
+  - UNIT_PRICE_IN_USD
+  - HS_CODE_DESCRIPTION
+  needs_review: true

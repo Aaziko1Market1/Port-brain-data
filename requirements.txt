@@ -1,0 +1,31 @@
+# GTI-OS Data Platform - Python Dependencies
+# Phase 0-1: Foundation & Ingestion
+
+# Data Processing
+polars>=0.19.0
+pandas>=2.0.0
+openpyxl>=3.1.0  # Excel file support
+xlrd>=2.0.1      # Legacy Excel support
+
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+alembic>=1.12.0  # Future migrations
+
+# Configuration & Utilities
+pyyaml>=6.0
+python-dateutil>=2.8.0
+python-dotenv>=1.0.0
+
+# Logging & Monitoring
+structlog>=23.0.0
+colorama>=0.4.6  # Windows color support
+
+# Performance
+psutil>=5.9.0
+
+# API Layer (EPIC 7B)
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+httpx>=0.25.0  # For API testing

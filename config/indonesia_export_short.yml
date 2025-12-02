@@ -1,0 +1,83 @@
+# Indonesia Export SHORT Format Configuration
+# Source: Indonesia Customs Export Data - Short/Summary Format
+# File pattern: Indonesia Export S.xlsx
+
+reporting_country: "INDONESIA"
+direction: "EXPORT"
+source_format: "SHORT"
+record_grain: "SUMMARY"
+value_type: "FOB"
+
+# Excel file structure
+header_row: 1  # 1-indexed (row 1 contains headers)
+data_start_row: 2  # First data row
+
+# Column mappings - using EXACT header names from the file
+# Columns: BUYER_NAME, EXPORTER_NAME, HS_CODE, HS_CODE_DESCRIPTION,
+#          DESTINATION_COUNTRY, SUMOFFOB_VALUE_FOB_BRGR_USD, %GTSUMOFFOB_VALUE_FOB_BRGR_USD,
+#          SUMOFQUANTITY, %GTSUMOFQUANTITY, MONTHYEAR
+column_mapping:
+  # Entity information
+  # In exports: EXPORTER is the supplier (Indonesian company), BUYER is the foreign consignee
+  supplier_name_raw: "EXPORTER_NAME"
+  buyer_name_raw: "BUYER_NAME"
+  
+  # Product classification
+  hs_code_raw: "HS_CODE"
+  hs_code_description: "HS_CODE_DESCRIPTION"
+  
+  # Geography
+  destination_country_raw: "DESTINATION_COUNTRY"
+  # origin_country not in file - use default (INDONESIA)
+  
+  # Dates - MONTHYEAR format like "Jan 2023"
+  monthyear_raw: "MONTHYEAR"
+  
+  # Quantities and values
+  qty_raw: "SUMOFQUANTITY"
+  qty_unit_raw: null  # Unit not in SHORT format
+  value_raw: "SUMOFFOB_VALUE_FOB_BRGR_USD"  # FOB value in USD
+  
+  # Percentage fields (optional metadata)
+  pct_fob_value: "%GTSUMOFFOB_VALUE_FOB_BRGR_USD"
+  pct_quantity: "%GTSUMOFQUANTITY"
+
+# Data defaults and conversions
+defaults:
+  origin_country_raw: "INDONESIA"
+  origin_country: "INDONESIA"
+  reporting_country: "INDONESIA"
+  direction: "EXPORT"
+
+# Unit conversions (limited for SHORT format)
+unit_conversions:
+  DEFAULT:
+    is_weight: false
+    estimate_kg_per_unit: null
+
+# Value currency
+value_currency:
+  local: "IDR"  # Indonesian Rupiah
+  usd: "USD"
+
+# Date formats
+date_formats:
+  - "%b %Y"      # Jan 2023
+  - "%B %Y"      # January 2023
+  - "%Y-%m-%d"
+
+# Data quality rules (relaxed for SHORT format)
+quality_rules:
+  require_hs_code: true
+  require_exporter: true
+  require_buyer: true
+  require_value: true
+  require_destination_country: true
+  require_quantity: true
+  min_value: 0.01
+  max_hs_code_length: 10
+
+# Notes
+# - SHORT format has aggregated/summary data
+# - SUMOFQUANTITY is the total quantity (unit unknown)
+# - FOB value is already in USD

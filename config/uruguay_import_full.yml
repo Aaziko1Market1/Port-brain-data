@@ -1,0 +1,75 @@
+# Auto-generated config for URUGUAY IMPORT FULL
+# Source: Uruguay Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: URUGUAY
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ID
+  supplier_name_raw: TODO_SUPPLIER
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ID
+  qty_raw: COMERCIAL_QUANTITY
+  qty_unit_raw: COMERCIAL_UNIT
+  value_raw: TOTAL_GROSS_WEIGHT
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: URUGUAY
+  direction: IMPORT
+  destination_country_raw: URUGUAY
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.099828'
+  source_file: Uruguay Import F.xlsx
+  detected_columns:
+  - ADQUISITION_COUNTRY
+  - COMERCIAL_QUANTITY
+  - COMERCIAL_UNIT
+  - CUSTOM
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMPORT_ID
+  - IMP_DATE
+  - INCOTERMS
+  - ITEM
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - PROVENANCE_COUNTRY
+  - RECORDS_TAG
+  - RECORD_ID
+  - STAT_QUANTITY
+  - STAT_UNIT
+  - TOTAL_GROSS_WEIGHT
+  - TRANSPORT_COMPANY
+  - TRANSPORT_TYPE
+  - TYPE_OF_IMPORT
+  - UNIT_QUANTITY
+  - USD_CIF_ITEM
+  - USD_FOB_ITEM
+  - USD_FOB_UNIT
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - VERIF_IMPORTER_ID
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_NAME_EN
+  needs_review: true

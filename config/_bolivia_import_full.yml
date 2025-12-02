@@ -1,0 +1,66 @@
+# Auto-generated config for _BOLIVIA IMPORT FULL
+# Source: _Bolivia Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: ' BOLIVIA'
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ID
+  supplier_name_raw: TODO_SUPPLIER
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ID
+  qty_raw: QUANTITY
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTAL_CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: ' BOLIVIA'
+  direction: IMPORT
+  destination_country_raw: ' BOLIVIA'
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.138658'
+  source_file: _Bolivia Import F.xlsx
+  detected_columns:
+  - COUNTRY_ISO_CODE_2
+  - DECLARANT
+  - DECLARANT_ID
+  - DEPARTURE_COUNTRY
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMP_DATE
+  - ITEM
+  - ITEM_FOB
+  - OPERATION_NUMBER
+  - ORIGIN_COUNTRY
+  - PACKAGES
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_STATUS
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - TOTAL_CIF
+  - TOTAL_FOB
+  - WEIGHT
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_NAME_EN
+  needs_review: true

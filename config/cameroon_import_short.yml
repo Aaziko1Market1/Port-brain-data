@@ -1,0 +1,49 @@
+# Auto-generated config for CAMEROON IMPORT SHORT
+# Source: Cameroon Import S.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: CAMEROON
+direction: IMPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: QUANTITY
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTALVALUEUSD
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: CAMEROON
+  direction: IMPORT
+  destination_country_raw: CAMEROON
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.848507'
+  source_file: Cameroon Import S.xlsx
+  detected_columns:
+  - SUPPLIER_NAME
+  - IMPORTER_NAME
+  - HS_CODE
+  - ORIGIN_COUNTRY
+  - HS_CODE_DESCRIPTION_EN
+  - TOTALVALUEUSD
+  - QUANTITY
+  - MONTHYEAR
+  needs_review: true

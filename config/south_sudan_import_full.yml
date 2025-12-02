@@ -1,0 +1,76 @@
+# Auto-generated config for SOUTH_SUDAN IMPORT FULL
+# Source: South sudan Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: SOUTH SUDAN
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: SOUTH SUDAN
+  direction: IMPORT
+  destination_country_raw: SOUTH SUDAN
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.052234'
+  source_file: South sudan Import F.xlsx
+  detected_columns:
+  - AUO
+  - CIF
+  - CIF_USD
+  - COUNTRY_ISO_CODE_2
+  - DESTINATION_COUNTRY
+  - EXCISE_DUTY
+  - FOB
+  - FOB_USD
+  - FREIGHT
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IDL
+  - IMPORTER_NAME
+  - IMPORT_DUTY
+  - IMP_DATE
+  - INSURANCE
+  - MVF
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - OTHER_COSTS
+  - PRODUCT_DESCRIPTION
+  - PV
+  - QUALITY_INSPECTION_FEES
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - TIN
+  - TOTAL_TAXES
+  - UNIT
+  - VAT
+  - WHT
+  needs_review: true

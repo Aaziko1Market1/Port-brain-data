@@ -1,0 +1,67 @@
+# Auto-generated config for SRILANKA IMPORT FULL
+# Source: Srilanka import F (1).xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: SRILANKA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: STD_SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: TOTAL_AMOUNT
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: SRILANKA
+  direction: IMPORT
+  destination_country_raw: SRILANKA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.059240'
+  source_file: Srilanka import F (1).xlsx
+  detected_columns:
+  - COUNTRY_ISO_CODE_2
+  - CURRENCY
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_NAME
+  - IMP_DATE
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - STD_IMPORTER_NAME
+  - STD_SUPPLIER_NAME
+  - SUPPLIER_NAME
+  - TOTAL_AMOUNT
+  - TRANSPORT
+  - UNIT
+  - UNIT_PRICE
+  - UNIT_VALUE_USD
+  - VALUE_IN_USD
+  - HS_CODE_DESCRIPTION
+  - STD_SUPPLIER_ADDRESS
+  - SUPPLIER_UUID
+  needs_review: true

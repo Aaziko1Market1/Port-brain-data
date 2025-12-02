@@ -1,0 +1,49 @@
+# Auto-generated config for LESOTHO EXPORT SHORT
+# Source: Lesotho Export S.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: LESOTHO
+direction: EXPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: TOTALWEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTALWEIGHT
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: LESOTHO
+  direction: EXPORT
+  origin_country_raw: LESOTHO
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.927746'
+  source_file: Lesotho Export S.xlsx
+  detected_columns:
+  - BUYER_NAME
+  - EXPORTER_NAME
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - DESTINATION_COUNTRY
+  - TOTALWEIGHT
+  - TOTALUSD
+  - MONTHYEAR
+  needs_review: true

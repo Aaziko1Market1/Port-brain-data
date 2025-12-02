@@ -1,0 +1,98 @@
+# Auto-generated config for UZBEKISTAN EXPORT FULL
+# Source: Uzbekistan export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: UZBEKISTAN
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_ADDRESS
+  supplier_name_raw: COUNTRY_OF_EXPORTER
+  hs_code_raw: HS_CODE
+  export_date_raw: DATE_OF_ISSUE
+  qty_raw: GROSS_WEIGHT_KG
+  qty_unit_raw: ADDITIONAL_MEASUREMENT_UNIT
+  value_raw: CUSTOMS_VALUE_FC
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: UZBEKISTAN
+  direction: EXPORT
+  origin_country_raw: UZBEKISTAN
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.104874'
+  source_file: Uzbekistan export F.xlsx
+  detected_columns:
+  - ADDITIONAL_MEASUREMENT_UNIT
+  - BUYER_ADDRESS
+  - BUYER_ADDRESS_EN
+  - BUYER_CODE
+  - BUYER_NAME
+  - BUYER_NAME_EN
+  - BUYER_PHONE
+  - CONTRACT_CURRENCY
+  - CONTRACT_HOLDER_ADDRESS
+  - CONTRACT_HOLDER_CODE
+  - CONTRACT_HOLDER_NAME
+  - CONTRACT_NUMBER
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_EXPORTER
+  - CUSTOMS_BROKER_ADDRESS
+  - CUSTOMS_BROKER_NAME
+  - CUSTOMS_FEES_COLLECTED
+  - CUSTOMS_FEE_EXEMPTION
+  - CUSTOMS_MODE_CODE
+  - CUSTOMS_MODE_NAME
+  - CUSTOMS_VALUE_FC
+  - CUSTOMS_VALUE_USD
+  - DATE_OF_ISSUE
+  - DELIVERY_PLACE
+  - DELIVERY_TRANSPORT_TYPE
+  - DESTINATION_COUNTRY
+  - EXCHANGE_RATE_OF_CONTRACT_VALUE
+  - EXCHANGE_RATE_OF_USD
+  - EXPORTER_ADDRESS
+  - EXPORTER_ADDRESS_EN
+  - EXPORTER_CODE
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - EXPORTER_PHONE
+  - GROSS_WEIGHT_KG
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - INCOTERMS
+  - NET_WEIGHT_KG
+  - NUMBER_OF_GOODS
+  - ORIGIN_COUNTRY
+  - PIECES_OR_NUMBER_OF_GOODS
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGISTERED_CUSTOMS_POST
+  - REGISTRATION_NUMBER
+  - STATISTICAL_VALUE_IN_1000_USD
+  - TOTAL_CUSTOMS_VALUE_FC
+  - TOTAL_CUSTOMS_VALUE_USD
+  - TOTAL_INVOICE_VALUE_FC
+  - TOTAL_INVOICE_VALUE_USD
+  - TRADING_COUNTRY
+  - TRUSTEE_NAME
+  - HS_CODE_DESCRIPTION
+  needs_review: true

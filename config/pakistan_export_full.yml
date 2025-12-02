@@ -1,0 +1,68 @@
+# Auto-generated config for PAKISTAN EXPORT FULL
+# Source: Pakistan export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PAKISTAN
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: TOTAL_VALUE_FC
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: PAKISTAN
+  direction: EXPORT
+  origin_country_raw: PAKISTAN
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.991916'
+  source_file: Pakistan export F.xlsx
+  detected_columns:
+  - AGENT_NAME
+  - BUYER_NAME
+  - COUNTRY
+  - COUNTRY_CODE
+  - COUNTRY_ISO_CODE_2
+  - CURRENCY
+  - CURRENCY_CODE
+  - EXPORTER_NAME
+  - EXPORTER_NTN
+  - EXP_DATE
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - PORT_OF_SHIPMENT
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SB_NO
+  - TOTAL_VALUE_FC
+  - TOTAL_VALUE_PAK_RS
+  - UNIT
+  - UNIT_PRICE_FC
+  - UNIT_VALUE
+  - HS_CODE_DESCRIPTION
+  - EXPORTER_ADDRESS
+  - BUYER_ADDRESS
+  needs_review: true

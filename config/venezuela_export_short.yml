@@ -1,0 +1,50 @@
+# Auto-generated config for VENEZUELA EXPORT SHORT
+# Source: Venezuela Export S.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: VENEZUELA
+direction: EXPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: TODO_BUYER
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: TOTALWEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTALVALUE
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: VENEZUELA
+  direction: EXPORT
+  origin_country_raw: VENEZUELA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.115310'
+  source_file: Venezuela Export S.xlsx
+  detected_columns:
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - EXPORTER_NAME
+  - DESTINATION_COUNTRY
+  - TOTALVALUE
+  - '%GTTOTALVALUE'
+  - TOTALWEIGHT
+  - '%GTTOTALWEIGHT'
+  - MONTHYEAR
+  needs_review: true

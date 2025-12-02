@@ -1,0 +1,65 @@
+# Auto-generated config for BANGLADESH EXPORT FULL
+# Source: Bangladesh Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: BANGLADESH
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_ADDRESS
+  hs_code_raw: HS_CODE
+  export_date_raw: BE_REGISTRATION_DATE
+  qty_raw: GROSS_WT_IN_KG
+  qty_unit_raw: TODO_UNIT
+  value_raw: ASSESSED_VALUE_IN_TK
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: BANGLADESH
+  direction: EXPORT
+  origin_country_raw: BANGLADESH
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.810981'
+  source_file: Bangladesh Export F.xlsx
+  detected_columns:
+  - ASSESSED_VALUE_IN_TK
+  - ASSESSED_VALUE_IN_USD
+  - BE_NUMBER
+  - BE_REGISTRATION_DATE
+  - BIN
+  - BUYER_NAME
+  - COUNTRY_CODE
+  - COUNTRY_ISO_CODE_2
+  - DESTINATION_COUNTRY
+  - EXD_TK
+  - EXPORTER_ADDRESS
+  - EXPORTER_NAME
+  - EXP_DATE
+  - GROSS_WT_IN_KG
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - NET_WT_IN_KG
+  - OFFICE_CODE
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  needs_review: true

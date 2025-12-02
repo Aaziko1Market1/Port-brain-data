@@ -1,0 +1,47 @@
+# Auto-generated config for UZBEKISTAN IMPORT SHORT
+# Source: Uzbekistan Import s.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: UZBEKISTAN
+direction: IMPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME_EN
+  supplier_name_raw: SUPPLIER_NAME_EN
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME_EN
+  qty_raw: TODO_QUANTITY
+  qty_unit_raw: TODO_UNIT
+  value_raw: SUMOFTOTAL_INVOICE_VALUE_USD
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: UZBEKISTAN
+  direction: IMPORT
+  destination_country_raw: UZBEKISTAN
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.111901'
+  source_file: Uzbekistan Import s.xlsx
+  detected_columns:
+  - HS_CODE
+  - IMPORTER_NAME_EN
+  - SUPPLIER_NAME_EN
+  - SUMOFNUMBER_OF_GOODS
+  - SUMOFTOTAL_INVOICE_VALUE_USD
+  - MONTHYEAR
+  needs_review: true

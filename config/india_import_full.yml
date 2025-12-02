@@ -1,0 +1,80 @@
+# Auto-generated config for INDIA IMPORT FULL
+# Source: India Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: INDIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER
+  supplier_name_raw: SUPPLIER
+  hs_code_raw: HS CODE
+  import_date_raw: DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: UNIT PRICE_INR
+  origin_country_raw: COUNTRY OF_ORIGIN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: INDIA
+  direction: IMPORT
+  destination_country_raw: INDIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.904434'
+  source_file: India Import F.xlsx
+  detected_columns:
+  - PORT CODE
+  - INDIAN PORT
+  - DATE
+  - IEC
+  - IMPORTER
+  - ADDRESS
+  - CITY
+  - CHA NO
+  - CHA NAME
+  - COUNTRY OF_ORIGIN
+  - HS CODE
+  - GOODS DESCRIPTION
+  - QUANTITY
+  - UNIT
+  - UNIT PRICE_INR
+  - TOTAL VALUE_INR
+  - UNIT PRICE_USD
+  - TOTAL VALUE_USD
+  - DUTY PAID_INR
+  - APPRAISING GROUP
+  - LOADING PORT
+  - INVOICE CURRENCY
+  - SUPPLIER
+  - SUPPLIER ADDRESS
+  - STD SUPPLIER
+  - STD SUPPLIER ADDRESS
+  - INVOICE UNITPRICE_FC
+  - BE TYPE
+  - INVOICE NO
+  - STD QUANTITY
+  - STD UNIT
+  - STD UNIT_VALUE_INR
+  - STD UNIT_PRICE_USD
+  - DECLARATION NO
+  - HS CODE_2
+  - HS CODE_4
+  - country iso_code_2
+  - HS CODE_DESCRIPTION
+  - PIN
+  needs_review: true

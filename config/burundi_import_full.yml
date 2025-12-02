@@ -1,0 +1,73 @@
+# Auto-generated config for BURUNDI IMPORT FULL
+# Source: Burundi Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: BURUNDI
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: BURUNDI
+  direction: IMPORT
+  destination_country_raw: BURUNDI
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.838830'
+  source_file: Burundi Import F.xlsx
+  detected_columns:
+  - BUSINESS_TIN
+  - CIF
+  - CIF_USD
+  - COUNTRY_ISO_CODE_2
+  - DESTINATION_COUNTRY
+  - EXCISE_DUTY
+  - FOB
+  - FOB_USD
+  - FREIGHT
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IMPORTER_NAME
+  - IMPORTS_DUTY
+  - IMP_DATE
+  - INSURANCE
+  - NET_WEIGHT
+  - NUMBER_OF_PACKAGE
+  - ORIGIN_COUNTRY
+  - OTHER_COSTS
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - TARIFF_RATE
+  - TOTAL_DUTY_AND_TAXES
+  - UNIT
+  - VAT
+  - WHT
+  needs_review: true

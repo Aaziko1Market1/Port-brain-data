@@ -1,0 +1,76 @@
+# Auto-generated config for PAKISTAN IMPORT FULL
+# Source: Pakistan Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PAKISTAN
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ADDRESS
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: RATE_ASSIGNED_USD
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: PAKISTAN
+  direction: IMPORT
+  destination_country_raw: PAKISTAN
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.995465'
+  source_file: Pakistan Import F.xlsx
+  detected_columns:
+  - AGENT_NAME
+  - BE_TYPE
+  - CASH_NO
+  - COUNTRY_ISO_CODE_2
+  - CURRENCY_CODE
+  - CUSTOMS_DUTY
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IGMNO
+  - IMPORTER_ADDRESS
+  - IMPORTER_NAME
+  - IMPORTER_NTN
+  - IMP_DATE
+  - INCOME_TAX
+  - ORIGIN_COUNTRY
+  - OTHER_TAX
+  - PORTSTR
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RATE_ASSIGNED_USD
+  - RATE_DECLARED_USD
+  - RECORDS_TAG
+  - RECORD_ID
+  - SALES_TAX
+  - SALES_TAX_ADDITIONAL
+  - SRO
+  - SUPPLIER_NAME
+  - TOTAL_ASSESS_VALUE_PAK_RS
+  - TOTAL_ASSESS_VALUE_USD
+  - TOTAL_DCL_VALUE_PAK_RS
+  - TOTAL_DCL_VALUE_USD
+  - UNIT
+  - HS_CODE_DESCRIPTION
+  - SUPPLIER_ADDRESS
+  needs_review: true

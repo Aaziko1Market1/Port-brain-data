@@ -1,0 +1,75 @@
+# Auto-generated config for GHANA IMPORT FULL
+# Source: Ghana Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: GHANA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: CONSIGNEE_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: GROSS_WEIGHT_KGS
+  qty_unit_raw: UNIT_VALUE_IN_USD
+  value_raw: CIF_VALUE_FCY
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: GHANA
+  direction: IMPORT
+  destination_country_raw: GHANA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.899868'
+  source_file: Ghana Import F.xlsx
+  detected_columns:
+  - BOE_NO
+  - CIF_VALUE_FCY
+  - CIF_VALUE_IN_USD
+  - CIF_VALUE_NCY
+  - CONSIGNEE_NAME
+  - CONSIGNEE_TIN
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_CONSIGNMENT
+  - CURRENCY_CODE
+  - DECLARANT_NAME
+  - DECLARANT_TIN
+  - EXCHANGE_RATE
+  - FOB_FCY
+  - FOB_NCY
+  - GROSS_WEIGHT_KGS
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IMPORTER_NAME
+  - IMPORTER_TIN
+  - IMP_DATE
+  - ITEM_NO
+  - ITEM_QUANTITY
+  - ITEM_QUANTITY_TYPE
+  - NET_WEIGHT_KGS
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - SUPPLIER_TIN
+  - TAX_AMOUNT_PAYABLE_GHS
+  - UNIT_VALUE_IN_USD
+  needs_review: true

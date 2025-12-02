@@ -1,0 +1,63 @@
+# Auto-generated config for PHILIPPINES EXPORT FULL
+# Source: Philippines export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PHILIPPINES
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_ADDRESS
+  supplier_name_raw: EXPORTER_ADDRESS
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_ADDRESS
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: PACKAGE_UNIT
+  value_raw: FOB_VALUE
+  origin_country_raw: EXPORT_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: PHILIPPINES
+  direction: EXPORT
+  origin_country_raw: PHILIPPINES
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.025095'
+  source_file: Philippines export F.xlsx
+  detected_columns:
+  - DESTINATION_COUNTRY
+  - BUYER_ADDRESS
+  - BUYER_NAME
+  - COUNTRY_ISO_CODE_2
+  - CURRENCY
+  - EXPORTER_ADDRESS
+  - EXPORTER_NAME
+  - EXPORT_COUNTRY
+  - EXP_DATE
+  - FOB_VALUE
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - INCOTERMS
+  - NET_WEIGHT
+  - PACKAGE_UNIT
+  - PRODUCT_DESCRIPTION
+  - QUANTITY_OF_PACKAGE
+  - RECORDS_TAG
+  - RECORD_ID
+  - HS_CODE_DESCRIPTION
+  needs_review: true

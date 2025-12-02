@@ -1,0 +1,51 @@
+# Auto-generated config for MALAYSIA EXPORT SHORT
+# Source: Malaysia Export S.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MALAYSIA
+direction: EXPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: TOTALQUANTITY
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTALVALUE
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: MALAYSIA
+  direction: EXPORT
+  origin_country_raw: MALAYSIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.942803'
+  source_file: Malaysia Export S.xlsx
+  detected_columns:
+  - BUYER_NAME
+  - EXPORTER_NAME
+  - EXPORTER_CODE
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - ORIGIN_COUNTRY
+  - DESTINATION_COUNTRY
+  - TOTALVALUE
+  - TOTALQUANTITY
+  - MONTHYEAR
+  needs_review: true

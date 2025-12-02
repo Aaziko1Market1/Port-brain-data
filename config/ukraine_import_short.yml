@@ -1,0 +1,52 @@
+# Auto-generated config for UKRAINE IMPORT SHORT
+# Source: Ukraine Import Short.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: UKRAINE
+direction: IMPORT
+source_format: SHORT
+record_grain: LINE_ITEM
+header_row: 1
+data_start_row: 2
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME_EN
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME_EN
+  qty_raw: TOTALQUANTITY
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTALVALUE
+  origin_country_raw: ORIGIN_COUNTRY_EN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: UKRAINE
+  direction: IMPORT
+  destination_country_raw: UKRAINE
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.094538'
+  source_file: Ukraine Import Short.xlsx
+  detected_columns:
+  - HS_CODE
+  - SUPPLIER_NAME
+  - IMPORTER_NAME_EN
+  - SUPPLIER_NAME_EN
+  - HS_CODE_DESCRIPTION
+  - ORIGIN_COUNTRY_EN
+  - TOTALVALUE
+  - '%GTTOTALVALUE'
+  - TOTALQUANTITY
+  - '%GTTOTALQUANTITY'
+  - MONTHYEAR
+  needs_review: true

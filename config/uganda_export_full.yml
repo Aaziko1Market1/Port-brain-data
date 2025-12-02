@@ -1,0 +1,69 @@
+# Auto-generated config for UGANDA EXPORT FULL
+# Source: Uganda Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: UGANDA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_ID
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_ID
+  qty_raw: GROSS_WEIGHT_IN_KG
+  qty_unit_raw: UNIT
+  value_raw: CIF_IN_UGX
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: UGANDA
+  direction: EXPORT
+  origin_country_raw: UGANDA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.080833'
+  source_file: Uganda Export F.xlsx
+  detected_columns:
+  - BUYER_NAME
+  - CIF_IN_UGX
+  - CIF_IN_USD
+  - COUNTRY
+  - DESTINATION_COUNTRY
+  - EXPORTER_ID
+  - EXPORTER_NAME
+  - EXP_DATE
+  - GROSS_WEIGHT_IN_KG
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - NET_WEIGHT_IN_KG
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - STD_EXPORTER_NAME
+  - TAX_IN_UGX
+  - TAX_IN_USD
+  - TAX_PAYER_TIN
+  - TOTAL_TAX_AMT
+  - UNIT
+  - HS_CODE_2
+  - HS_CODE_4
+  - BUYER_UUID
+  - STD_BUYER_NAME
+  - STD_BUYER_ADDRESS
+  needs_review: true

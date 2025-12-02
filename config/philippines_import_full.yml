@@ -1,0 +1,72 @@
+# Auto-generated config for PHILIPPINES IMPORT FULL
+# Source: Philippines Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PHILIPPINES
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: EXPORT_COUNTRY
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: PACKAGE_UNIT
+  value_raw: CIF_VALUE_USD
+  origin_country_raw: EXPORT_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: PHILIPPINES
+  direction: IMPORT
+  destination_country_raw: PHILIPPINES
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.028095'
+  source_file: Philippines Import F.xlsx
+  detected_columns:
+  - BL_NO
+  - CIF_VALUE_USD
+  - COUNTRY_ISO_CODE_2
+  - DESTINATION_COUNTRY
+  - EXPORT_COUNTRY
+  - FOB_VALUE_USD
+  - FREIGHT_USD
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ADDRESS
+  - IMPORTER_EMAIL
+  - IMPORTER_NAME
+  - IMPORTER_TELEPHONE
+  - IMP_DATE
+  - INCOTERMS
+  - INSURANCE_USD
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PACKAGE_UNIT
+  - PORT
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - QUANTITY_OF_PACKAGE
+  - QUANTITY_UNIT
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - VESSEL_NAME
+  - HS_CODE_DESCRIPTION
+  needs_review: true

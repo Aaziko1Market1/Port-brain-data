@@ -1,0 +1,216 @@
+# Turkey Port Data Formats
+
+Generated: 2025-12-01 10:06:58
+
+## Overview
+
+This document describes the port data file formats available for Turkey.
+
+| File | Direction | Format | Rows | Header Row | Date Column | HS Code Column | Value Column |
+|------|-----------|--------|------|------------|-------------|----------------|--------------|
+| Turkey Export F.xlsx | EXPORT | FULL | 4 | 6 | CLOSING_DATE | HS_CODE | CALCULATED_ITEM_VALUE_USD |
+| Turkey Export S.xlsx | EXPORT | SHORT | 100 | 1 | EXPORTER_NAME_EN | HS_CODE | TOTALVALUE |
+| Turkey Import F.xlsx | IMPORT | FULL | 2 | 6 | CLOSING_DATE | HS_CODE | CALCULATED_ITEM_VALUE_USD |
+| Turkey Import S.xlsx | IMPORT | SHORT | 100 | 1 | IMPORTER_NAME_EN | HS_CODE | TOTALVALUE |
+
+## Detailed Format Analysis
+
+### Turkey Export F.xlsx
+
+- **Direction:** EXPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 4
+
+**Detected Column Types:**
+
+- 📅 Date: CLOSING_DATE, EXPORTER_CODE, EXPORTER_NAME, EXPORTER_NAME_EN, INVOICE_AMOUNT, REGISTRATION_DATE
+- 📦 HS Code: HS_CODE, HS_CODE_2, HS_CODE_4, HS_CODE_DESCRIPTION, HS_CODE_DESCRIPTION_EN
+- 💰 Value: CALCULATED_ITEM_VALUE_USD, CALCULATED_TOTAL_VALUE_USD, INVOICE_AMOUNT, STATISTICAL_VALUE_USD
+- 📊 Quantity: NET_WEIGHT_KG, QUANTITY
+- 🏢 Buyer/Importer: BUYER_NAME
+- 🏭 Supplier/Exporter: EXPORTER_CODE, EXPORTER_NAME, EXPORTER_NAME_EN
+
+**Config File:** `config/turkey_export_full.yml`
+
+<details>
+<summary>All Columns (37 total)</summary>
+
+```
+BUYER_NAME
+CALCULATED_ITEM_VALUE_USD
+CALCULATED_TOTAL_VALUE_USD
+CLOSING_DATE
+COUNTRY_ISO_CODE_2
+CURRENCY
+CUSTOMS_OFFICE_CODE
+CUSTOMS_OFFICE_NAME
+CUSTOMS_OFFICE_NAME_EN
+DESTINATION_COUNTRY
+DESTINATION_COUNTRY_CODE
+EXPORTER_CODE
+EXPORTER_NAME
+EXPORTER_NAME_EN
+HS_CODE
+HS_CODE_2
+HS_CODE_4
+HS_CODE_DESCRIPTION
+HS_CODE_DESCRIPTION_EN
+INCOTERMS
+INVOICE_AMOUNT
+ITEM_NO
+ITEM_REGIME_CODE
+ITEM_REGIME_NAME
+NET_WEIGHT_KG
+ORIGIN_COUNTRY
+ORIGIN_COUNTRY_CODE
+PRODUCT_DESCRIPTION
+PRODUCT_DESCRIPTION_EN
+QUANTITY
+RECORDS_TAG
+RECORD_ID
+REGISTRATION_DATE
+REGISTRATION_NO
+STATISTICAL_VALUE_USD
+STATUTE_STATEMENT
+UNIT
+```
+</details>
+
+---
+
+### Turkey Export S.xlsx
+
+- **Direction:** EXPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 100
+
+**Detected Column Types:**
+
+- 📅 Date: EXPORTER_NAME_EN
+- 📦 HS Code: HS_CODE, HS_CODE_DESCRIPTION_EN
+- 💰 Value: TOTALVALUE, %GTTOTALVALUE, TOTALQUANTITY
+- 📊 Quantity: TOTALQUANTITY
+- 🏢 Buyer/Importer: BUYER_NAME
+- 🏭 Supplier/Exporter: EXPORTER_NAME_EN
+
+**Config File:** `config/turkey_export_short.yml`
+
+<details>
+<summary>All Columns (8 total)</summary>
+
+```
+HS_CODE
+BUYER_NAME
+EXPORTER_NAME_EN
+HS_CODE_DESCRIPTION_EN
+TOTALVALUE
+%GTTOTALVALUE
+TOTALQUANTITY
+MONTHYEAR
+```
+</details>
+
+---
+
+### Turkey Import F.xlsx
+
+- **Direction:** IMPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: CLOSING_DATE, IMPORTER_CODE, IMPORTER_NAME_EN, INVOICE_AMOUNT, REGISTRATION_DATE, IMPORTER_NAME
+- 📦 HS Code: HS_CODE, HS_CODE_2, HS_CODE_4, HS_CODE_DESCRIPTION, HS_CODE_DESCRIPTION_EN
+- 💰 Value: CALCULATED_ITEM_VALUE_USD, CALCULATED_TOTAL_VALUE_USD, INVOICE_AMOUNT, STATISTICAL_VALUE_USD
+- 📊 Quantity: NET_WEIGHT_KG, QUANTITY
+- 🏢 Buyer/Importer: IMPORTER_CODE, IMPORTER_NAME_EN, IMPORTER_NAME
+- 🏭 Supplier/Exporter: SUPPLIER_NAME
+
+**Config File:** `config/turkey_import_full.yml`
+
+<details>
+<summary>All Columns (36 total)</summary>
+
+```
+CALCULATED_ITEM_VALUE_USD
+CALCULATED_TOTAL_VALUE_USD
+CLOSING_DATE
+COUNTRY_ISO_CODE_2
+CURRENCY
+CUSTOMS_OFFICE_CODE
+CUSTOMS_OFFICE_NAME
+CUSTOMS_OFFICE_NAME_EN
+DISPATCH_COUNTRY
+DISPATCH_COUNTRY_CODE
+HS_CODE
+HS_CODE_2
+HS_CODE_4
+HS_CODE_DESCRIPTION
+HS_CODE_DESCRIPTION_EN
+IMPORTER_CODE
+IMPORTER_NAME_EN
+INCOTERMS
+INVOICE_AMOUNT
+ITEM_NO
+ITEM_REGIME_CODE
+ITEM_REGIME_NAME
+NET_WEIGHT_KG
+ORIGIN_COUNTRY
+ORIGIN_COUNTRY_CODE
+PRODUCT_DESCRIPTION
+PRODUCT_DESCRIPTION_EN
+QUANTITY
+RECORDS_TAG
+RECORD_ID
+REGISTRATION_DATE
+REGISTRATION_NO
+STATISTICAL_VALUE_USD
+SUPPLIER_NAME
+UNIT
+IMPORTER_NAME
+```
+</details>
+
+---
+
+### Turkey Import S.xlsx
+
+- **Direction:** IMPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 100
+
+**Detected Column Types:**
+
+- 📅 Date: IMPORTER_NAME_EN
+- 📦 HS Code: HS_CODE, HS_CODE_DESCRIPTION_EN
+- 💰 Value: TOTALVALUE, %GTTOTALVALUE, TOTALQUANTITY
+- 📊 Quantity: TOTALQUANTITY, %GTTOTALQUANTITY
+- 🏢 Buyer/Importer: IMPORTER_NAME_EN
+- 🏭 Supplier/Exporter: SUPPLIER_NAME
+
+**Config File:** `config/turkey_import_short.yml`
+
+<details>
+<summary>All Columns (10 total)</summary>
+
+```
+HS_CODE
+IMPORTER_NAME_EN
+SUPPLIER_NAME
+ORIGIN_COUNTRY
+HS_CODE_DESCRIPTION_EN
+TOTALVALUE
+%GTTOTALVALUE
+TOTALQUANTITY
+%GTTOTALQUANTITY
+MONTHYEAR
+```
+</details>
+
+---
+

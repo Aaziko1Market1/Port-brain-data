@@ -1,0 +1,74 @@
+# Auto-generated config for BRAZIL IMPORT FULL
+# Source: Brazil Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: BRAZIL
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_TAX_ID
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMP_DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: FOB_USD
+  origin_country_raw: EXPORTER_COUNTRY_NAME
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: BRAZIL
+  direction: IMPORT
+  destination_country_raw: BRAZIL
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.835375'
+  source_file: Brazil Import F.xlsx
+  detected_columns:
+  - RECORD_ID
+  - RECORDS_TAG
+  - IMP_DATE
+  - IMPORTER_TAX_ID
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMPORTER_NAME_EN
+  - IMPORTER_CITY
+  - IMPORTER_STATE
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - EXPORTER_COUNTRY_NAME
+  - ORIGIN_COUNTRY_NAME
+  - TRANS_TYPE
+  - INCOTERMS
+  - ENTRY_CUSTOMS_OFFICE_CODE_AND_NAME
+  - CLEARANCE_CUSTOMS_OFFICE_CODE_AND_NAME_EN
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - HS_CODE_DESCRIPTION_EN
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - UNIT
+  - WEIGHT_KG
+  - FOB_USD
+  - FREIGHT_USD
+  - INSURANCE_USD
+  - CIF_USD
+  - CIF_UNIT_USD
+  - HS_CODE_2
+  - HS_CODE_4
+  - COUNTRY_ISO_CODE_2
+  needs_review: true

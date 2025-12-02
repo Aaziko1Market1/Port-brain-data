@@ -1,0 +1,69 @@
+# Auto-generated config for MEXICO IMPORT FULL
+# Source: Mexico Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MEXICO
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: SUPPLIER_ADDRESS
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ADDRESS
+  qty_raw: COMERCIAL_QUANTITY
+  qty_unit_raw: CIF_UNIT_USD
+  value_raw: CIF_UNIT_USD
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: MEXICO
+  direction: IMPORT
+  destination_country_raw: MEXICO
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.954715'
+  source_file: Mexico Import F.xlsx
+  detected_columns:
+  - CIF_UNIT_USD
+  - CIF_USD
+  - COMERCIAL_QUANTITY
+  - COMERCIAL_UNIT
+  - COUNTRY_ISO_CODE_2
+  - CUSTOM_STATE_PORT
+  - DOCUMENT_NO
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IMPORTER_ADDRESS
+  - IMPORTER_CITY
+  - IMPORTER_NAME
+  - IMPORTER_STATE
+  - IMP_DATE
+  - LOCAL_PORT_POD
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_ADDRESS
+  - SUPPLIER_CITY
+  - SUPPLIER_NAME
+  - TOTAL_WEIGHT
+  - TRANSPORT
+  - UNIT
+  needs_review: true

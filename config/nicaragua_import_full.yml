@@ -1,0 +1,81 @@
+# Auto-generated config for NICARAGUA IMPORT FULL
+# Source: Nicaragua Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: NICARAGUA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER NAME EN
+  supplier_name_raw: SUPPLIER NAME EN
+  hs_code_raw: HS CODE
+  import_date_raw: IMPORTER NAME EN
+  qty_raw: NET WEIGHT
+  qty_unit_raw: UNIT MEASURE 1
+  value_raw: FOB VALUE
+  origin_country_raw: ORIGIN COUNTRY EN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: NICARAGUA
+  direction: IMPORT
+  destination_country_raw: NICARAGUA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.979769'
+  source_file: Nicaragua Import F.xlsx
+  detected_columns:
+  - HS CODE
+  - PRODUCT DESCRIPTION EN
+  - TAX ID
+  - IMPORTER NAME EN
+  - SUPPLIER NAME EN
+  - NET WEIGHT
+  - GROSS WEIGHT
+  - FOB VALUE
+  - CIF VALUE
+  - QUANTITY
+  - UNIT MEASURE 1
+  - UNIT OF MEASUREMENT 1 EN
+  - CUSTOM EN
+  - ORIGIN COUNTRY EN
+  - ACQUISITION COUNTRY EN
+  - IMP DATE
+  - IMPORTER NAME
+  - UNIT MEASURE 2
+  - UNIT OF MEASUREMENT 2 EN
+  - CORRELATIVE
+  - INSURANCE POLICY NUMBER
+  - CUSTOM SEAL
+  - SUPPLIER NAME
+  - FREIGHT VALUE
+  - INSURANCE VALUE
+  - OTHER EXPENDITURES VALUE
+  - PRODUCT DESCRIPTION
+  - CUSTOM AGENCY ID
+  - CUSTOM AGENCY NAME
+  - CUSTOM AGENCY NAME EN
+  - MODEL
+  - SAD LOC GOODS
+  - COLOUR
+  - COLOUR EN
+  - TAXABLE VALUE
+  - NOT TAXABLE VALUE
+  - TOTAL CUSTOM VALUE
+  - HS CODE 2
+  - HS CODE 4
+  - COUNTRY ISO CODE 2
+  needs_review: true

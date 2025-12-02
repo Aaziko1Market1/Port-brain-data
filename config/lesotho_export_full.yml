@@ -1,0 +1,61 @@
+# Auto-generated config for LESOTHO EXPORT FULL
+# Source: Lesotho Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: LESOTHO
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: DATE
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: CUSTOMS_VALUE_LSL
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: LESOTHO
+  direction: EXPORT
+  origin_country_raw: LESOTHO
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.926743'
+  source_file: Lesotho Export F.xlsx
+  detected_columns:
+  - BUYER_NAME
+  - COMMERCIAL_DESCRIPTION
+  - COUNTRY_ISO_CODE_2
+  - CUSTOMS_VALUE_LSL
+  - CUSTOMS_VALUE_USD
+  - DATE
+  - DESTINATION_COUNTRY
+  - EXPORTER_NAME
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - NET_WEIGHT
+  - NUMBER_OF_PACKAGES
+  - PACKAGE_TYPE
+  - RECORDS_TAG
+  - RECORD_ID
+  - STD_EXPORTER_NAME
+  - TAX_AMOUNT_LSL
+  needs_review: true

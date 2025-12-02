@@ -1,0 +1,97 @@
+# Auto-generated config for UKRAINE IMPORT FULL
+# Source: Ukraine Import Full.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: UKRAINE
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: DATE_OF_ISSUE
+  qty_raw: COST_USD_KG
+  qty_unit_raw: UNIT_EN
+  value_raw: COST_USD_KG
+  origin_country_raw: ORIGIN_COUNTRY_EN
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: UKRAINE
+  direction: IMPORT
+  destination_country_raw: UKRAINE
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.091990'
+  source_file: Ukraine Import Full.xlsx
+  detected_columns:
+  - BROKER_CODE
+  - BROKER_NAME
+  - COMPANY_CODE_OF_THE_CONTRACT_HOLDER
+  - CONTAINER_NUMBER
+  - CONTRACT_CURRENCY
+  - COST_USD_KG
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_DEPARTURE_EN
+  - CUSTOMS_AT_THE_BORDER
+  - CUSTOMS_CLEARANCE_EN
+  - CUSTOMS_VALUE_HRYVNIAS
+  - CUSTOMS_VALUE_USD
+  - CUSTOM_OFFICE_CODE
+  - DATE_OF_ISSUE
+  - DECLARANT_ADDRESS
+  - DECLARANT_CODE
+  - DECLARANT_NAME
+  - DECLARANT_NAME_EN
+  - DUTY_HRYVNIAS
+  - DUTY_RATE
+  - EXCISE_DUTY_UAH
+  - GROSS_WEIGHT_KG
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ADDRESS
+  - IMPORTER_ADDRESS_EN
+  - IMPORTER_CODE
+  - IMPORTER_NAME
+  - IMPORTER_NAME_EN
+  - INVOICE_VALUE_UAH
+  - INVOICE_VALUE_USD
+  - NAME_OF_THE_CONTRACT_HOLDERS_COMPANY
+  - NAME_OF_THE_CONTRACT_HOLDERS_COMPANY_EN
+  - NBU_EXCHANGE_RATE_USD
+  - NET_WEIGHT_KG
+  - NO_VMD
+  - ORIGIN_COUNTRY_EN
+  - PREFERENTIAL_DUTY
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - PRODUCT_NUMBER
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_NAME
+  - SUPPLIER_NAME_EN
+  - TERMS_OF_DELIVERY_CODE
+  - TERMS_OF_DELIVERY_PLACE_EN
+  - TRANSPORT_IN_THE_COUNTRY_1
+  - TRANSPORT_ON_THE_BORDER_3
+  - TYPE_OF_AMD
+  - UNIT_EN
+  - UNIT_VALUE_USD
+  - VAT_UAH
+  - HS_CODE_DESCRIPTION
+  needs_review: true

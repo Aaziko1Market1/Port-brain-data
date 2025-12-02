@@ -1,0 +1,77 @@
+# Auto-generated config for COLOMBIA IMPORT FULL
+# Source: Colombia IMport F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: COLOMBIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: SUPPLIER_ADDRESS
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ADDRESS
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: USD_CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DEPARTMENT_DESTINATION
+defaults:
+  reporting_country: COLOMBIA
+  direction: IMPORT
+  destination_country_raw: COLOMBIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.862818'
+  source_file: Colombia IMport F.xlsx
+  detected_columns:
+  - CONTROL_ID
+  - COUNTRY_ISO_CODE_2
+  - COUNTRY_OF_ACQUISITION
+  - CUSTOM
+  - DEPARTMENT_DESTINATION
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_ADDRESS
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - IMPORTER_PHONE
+  - IMP_DATE
+  - METHOD_OF_PAYMENT
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SUPPLIER_ADDRESS
+  - SUPPLIER_CITY
+  - SUPPLIER_COUNTRY
+  - SUPPLIER_NAME
+  - SUPPLIER_PHONE_E_MAIL
+  - TAX
+  - TRANSPORTATION_COMPANY
+  - TRANSPORT_DOCUMENT
+  - TYPE_OF_TRANSPORT
+  - UNIT
+  - USD_CIF
+  - USD_FOB
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - WEIGHT
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_NAME_EN
+  needs_review: true

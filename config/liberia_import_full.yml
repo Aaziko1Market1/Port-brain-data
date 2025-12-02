@@ -1,0 +1,74 @@
+# Auto-generated config for LIBERIA IMPORT FULL
+# Source: Liberia Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: LIBERIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: TOTAL_FEES
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: LIBERIA
+  direction: IMPORT
+  destination_country_raw: LIBERIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.932815'
+  source_file: Liberia Import F.xlsx
+  detected_columns:
+  - COST_INSURANCE_FREIGHT
+  - COUNTRY_ISO_CODE_2
+  - CURENCY
+  - CUSTOM_OFFICE
+  - DECLARATION_NUMBER
+  - DESTINATION_COUNTRY
+  - FREE_ON_BOARD
+  - FREIGHT
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - IMPORTER_NAME
+  - IMP_DATE
+  - INSURANCE
+  - ITEM
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PACKAGE_TYPE_NAME
+  - PACKING_DESCRIPTION_NOMENCLATURE
+  - PACKING_NUMBER
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - QUANTITY_TYPE
+  - RECIEPT_NUM
+  - RECORDS_TAG
+  - RECORD_ID
+  - SHIPMENT_NAME
+  - SHIPMENT_PARTICULAR
+  - SUPPLIER_NAME
+  - SUPPLY_COUNTRY
+  - TAX_IDENTIFICATION_NUMBER
+  - TOTAL_FEES
+  needs_review: true

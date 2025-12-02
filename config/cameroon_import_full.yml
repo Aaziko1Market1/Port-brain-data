@@ -1,0 +1,80 @@
+# Auto-generated config for CAMEROON IMPORT FULL
+# Source: Cameroon Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: CAMEROON
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_CODE
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: DECLARATION_DATE
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: TOTAL_VALUE_USD
+  origin_country_raw: EXPORT_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: CAMEROON
+  direction: IMPORT
+  destination_country_raw: CAMEROON
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.846520'
+  source_file: Cameroon Import F.xlsx
+  detected_columns:
+  - CODE_TYPE_DEC
+  - COUNTRY_ISO_CODE_2
+  - CURRENCY
+  - CUSTOM_DETAILS
+  - DECLARANT_CODE
+  - DECLARANT_NAME
+  - DECLARATION_DATE
+  - DECLARATION_NUMBER
+  - DESTINATION_COUNTRY
+  - EXPORT_COUNTRY
+  - FLUX
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - HS_CODE_DESCRIPTION_EN
+  - IMPORTER_CODE
+  - IMPORTER_NAME
+  - ITEM_NUMBER
+  - NET_WEIGHT
+  - NUMBER_OF_PACKAGES
+  - ORIGIN_COUNTRY
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGIME
+  - REGIME_CODE
+  - STATUS_DAU
+  - SUPPLIER_NAME
+  - TAX_ART
+  - TOTAL_VALUE_USD
+  - TYPE_DEC
+  - UNIT
+  - UNIT_VALUE_USD
+  - VAL_FACT_ART
+  - VAL_FACT_DEV
+  - VAL_STAT_ART
+  needs_review: true

@@ -1,0 +1,73 @@
+# Auto-generated config for NAMIBIA IMPORT FULL
+# Source: Namibia Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: NAMIBIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: STD_SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: EXPORTING_COUNTRY
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: TODO_UNIT
+  value_raw: CIF_VALUE
+  origin_country_raw: EXPORTING_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: NAMIBIA
+  direction: IMPORT
+  destination_country_raw: NAMIBIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.973769'
+  source_file: Namibia Import F.xlsx
+  detected_columns:
+  - ASSESSMENT_NUMBER
+  - CIF_VALUE
+  - CIF_VALUE_IN_USD
+  - DESTINATION_COUNTRY
+  - EXPORTING_COUNTRY
+  - EXTENDED_PROCEDURE
+  - FOB_VALUE
+  - FOB_VALUE_IN_USD
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_ADDRESS
+  - IMPORTER_NAME
+  - IMP_DATE
+  - ITEM
+  - MODEL
+  - NATIONAL_PROCEDURE
+  - NET_WEIGHT
+  - OFFICE
+  - ORIGIN_COUNTRY
+  - PACKAGE
+  - PRODUCT_DESCRIPTION
+  - RECORD_ID
+  - REGISTRATION_DATE
+  - REGISTRATION_NUMBER
+  - STD_IMPORTER_NAME
+  - STD_SUPPLIER_NAME
+  - SUPPLIER_ADDRESS
+  - SUPPLIER_NAME
+  - RECORDS_TAG
+  needs_review: true

@@ -1,0 +1,74 @@
+# Auto-generated config for IVORY_COAST EXPORT FULL
+# Source: Ivory coast Export F (1).xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: IVORY COAST
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_CODE
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_CODE
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: CIF_VALUE
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: IVORY COAST
+  direction: EXPORT
+  origin_country_raw: IVORY COAST
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.909031'
+  source_file: Ivory coast Export F (1).xlsx
+  detected_columns:
+  - BUYER_NAME
+  - CIF_VALUE
+  - CODE_MODE_TRANSP_FRONTIERE
+  - CODE_PORT
+  - DESTINATION_COUNTRY
+  - EXPORTER_CODE
+  - EXPORTER_NAME
+  - EXP_DATE
+  - FOB_VALUE
+  - FREIGHT
+  - GEN_CTY_DES_COD
+  - GEN_CTY_FLT
+  - GEN_CTY_ORG
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - INSURANCE
+  - NATURE_COLIS
+  - NET_WEIGHT
+  - NUMBER_OF_PRODUCTS
+  - ORIGIN_COUNTRY
+  - PORT_OR_OFFICE
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - PROVENANCE
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - SENS
+  - TRANSPORT_MODE
+  - UNIT
+  - HS_CODE_DESCRIPTION
+  needs_review: true

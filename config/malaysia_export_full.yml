@@ -1,0 +1,84 @@
+# Auto-generated config for MALAYSIA EXPORT FULL
+# Source: Malaysia Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MALAYSIA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER NAME
+  supplier_name_raw: EXPORTER CODE
+  hs_code_raw: HS CODE
+  export_date_raw: REGISTRATION DATE
+  qty_raw: GROSS WEIGHT
+  qty_unit_raw: WEIGHT UNIT
+  value_raw: TOTAL VALUE USD
+  origin_country_raw: ORIGIN COUNTRY
+  destination_country_raw: DESTINATION COUNTRY
+defaults:
+  reporting_country: MALAYSIA
+  direction: EXPORT
+  origin_country_raw: MALAYSIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.941364'
+  source_file: Malaysia Export F.xlsx
+  detected_columns:
+  - DECLARATION NUMBER
+  - REGISTRATION DATE
+  - EXPORTER CODE
+  - EXPORTER NAME
+  - EXPORTER ADDRESS
+  - DESTINATION COUNTRY
+  - BUYER NAME
+  - BUYER ADDRESS
+  - HS CODE
+  - HS CODE DESCRIPTION
+  - PRODUCT DESCRIPTION
+  - GROSS WEIGHT
+  - NET WEIGHT
+  - WEIGHT UNIT
+  - QUANTITY
+  - UNIT
+  - TOTAL VALUE USD
+  - TOTAL VALUE MYR
+  - TOTAL VALUE FC
+  - CURRENCY
+  - TOTAL SHIPMENT FOB USD
+  - FREIGHT
+  - PORT
+  - FOREIGN PORT
+  - MODE OF TRANSPORT
+  - ITEM NO
+  - UNIT PRICE LC
+  - INVOICE NO
+  - TOTAL TAX
+  - DUTY EXPORT
+  - INSURANCE
+  - TOTAL SHIPMENT FOB MYR
+  - OTHER COST
+  - STATION CODE
+  - STATION CODE NAME
+  - RELEASE DATE
+  - ORIGIN COUNTRY
+  - UNIT VALUE USD
+  - UNIT VALUE MYR
+  - EXCHANGE RATE
+  - HS CODE 2
+  - HS CODE 4
+  - COUNTRY ISO CODE 2
+  needs_review: true

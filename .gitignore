@@ -1,0 +1,51 @@
+# GTI-OS Data Platform - Git Ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+/control-tower-ui/node_modules
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Configuration (sensitive)
+config/db_config.yml
+config/ingestion_config.yml
+.env
+
+# Logs
+logs/
+*.log
+
+# Data
+data/raw/
+data/processed/
+data/archive/
+
+# Database
+*.sql.backup
+*.dump
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary
+*.tmp
+*.temp
+tmp/
+temp/

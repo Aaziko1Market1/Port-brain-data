@@ -1,0 +1,79 @@
+# Auto-generated config for PERU EXPORT FULL
+# Source: Peru  Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PERU
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: TODO_BUYER
+  supplier_name_raw: EXPORTER_ADDRESS
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_ADDRESS
+  qty_raw: COMMERCIAL_QUANTITY
+  qty_unit_raw: COMMERCIAL_MEASURE_UNIT
+  value_raw: USD_FOB
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: PERU
+  direction: EXPORT
+  origin_country_raw: PERU
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.016524'
+  source_file: Peru  Export F.xlsx
+  detected_columns:
+  - BANK
+  - COMMERCIAL_MEASURE_UNIT
+  - COMMERCIAL_QUANTITY
+  - CUSTOM
+  - CUSTOMS_AGENT
+  - DESTINATION_COUNTRY
+  - DESTINATION_PORT
+  - DUA_ID
+  - EXPORTER_ADDRESS
+  - EXPORTER_DEPARTMENT
+  - EXPORTER_DISTRICT
+  - EXPORTER_NAME
+  - EXPORTER_PHONE
+  - EXPORTER_STATE
+  - EXP_DATE
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - NET_WEIGHT
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_1
+  - PRODUCT_DESCRIPTION_2
+  - PRODUCT_DESCRIPTION_3
+  - PRODUCT_DESCRIPTION_4
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - RUC_EXPORTER_ID
+  - SERIE
+  - SHIP
+  - TRANSPORT_COMPANY
+  - TRANSPORT_TYPE
+  - UNIT
+  - USD_FOB
+  - USD_FOB_PER_UNIT
+  - EXPORTER_FAX
+  needs_review: true

@@ -1,0 +1,233 @@
+# Malaysia Port Data Formats
+
+Generated: 2025-12-01 10:06:58
+
+## Overview
+
+This document describes the port data file formats available for Malaysia.
+
+| File | Direction | Format | Rows | Header Row | Date Column | HS Code Column | Value Column |
+|------|-----------|--------|------|------------|-------------|----------------|--------------|
+| Malaysia Export F.xlsx | EXPORT | FULL | 2 | 6 | REGISTRATION DATE | HS CODE | TOTAL VALUE USD |
+| Malaysia Export S.xlsx | EXPORT | SHORT | 100 | 1 | EXPORTER_NAME | HS_CODE | TOTALVALUE |
+| Malaysia Import F.xlsx | IMPORT | FULL | 2 | 6 | IMP DATE | HS CODE | TOTAL VALUE USD |
+| Malaysia Import S.xlsx | IMPORT | SHORT | 100 | 1 | IMPORTER_NAME | HS_CODE | TOTALVALUE |
+
+## Detailed Format Analysis
+
+### Malaysia Export F.xlsx
+
+- **Direction:** EXPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: REGISTRATION DATE, EXPORTER CODE, EXPORTER NAME, EXPORTER ADDRESS, INVOICE NO, RELEASE DATE
+- 📦 HS Code: HS CODE, HS CODE DESCRIPTION, HS CODE 2, HS CODE 4
+- 💰 Value: TOTAL VALUE USD, TOTAL VALUE MYR, TOTAL VALUE FC, TOTAL SHIPMENT FOB USD, UNIT PRICE LC, TOTAL TAX, TOTAL SHIPMENT FOB MYR, UNIT VALUE USD, UNIT VALUE MYR
+- 📊 Quantity: GROSS WEIGHT, NET WEIGHT, WEIGHT UNIT, QUANTITY
+- 🏢 Buyer/Importer: BUYER NAME, BUYER ADDRESS
+- 🏭 Supplier/Exporter: EXPORTER CODE, EXPORTER NAME, EXPORTER ADDRESS
+
+**Config File:** `config/malaysia_export_full.yml`
+
+<details>
+<summary>All Columns (43 total)</summary>
+
+```
+DECLARATION NUMBER
+REGISTRATION DATE
+EXPORTER CODE
+EXPORTER NAME
+EXPORTER ADDRESS
+DESTINATION COUNTRY
+BUYER NAME
+BUYER ADDRESS
+HS CODE
+HS CODE DESCRIPTION
+PRODUCT DESCRIPTION
+GROSS WEIGHT
+NET WEIGHT
+WEIGHT UNIT
+QUANTITY
+UNIT
+TOTAL VALUE USD
+TOTAL VALUE MYR
+TOTAL VALUE FC
+CURRENCY
+TOTAL SHIPMENT FOB USD
+FREIGHT
+PORT
+FOREIGN PORT
+MODE OF TRANSPORT
+ITEM NO
+UNIT PRICE LC
+INVOICE NO
+TOTAL TAX
+DUTY EXPORT
+INSURANCE
+TOTAL SHIPMENT FOB MYR
+OTHER COST
+STATION CODE
+STATION CODE NAME
+RELEASE DATE
+ORIGIN COUNTRY
+UNIT VALUE USD
+UNIT VALUE MYR
+EXCHANGE RATE
+HS CODE 2
+HS CODE 4
+COUNTRY ISO CODE 2
+```
+</details>
+
+---
+
+### Malaysia Export S.xlsx
+
+- **Direction:** EXPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 100
+
+**Detected Column Types:**
+
+- 📅 Date: EXPORTER_NAME, EXPORTER_CODE
+- 📦 HS Code: HS_CODE, HS_CODE_DESCRIPTION
+- 💰 Value: TOTALVALUE, TOTALQUANTITY
+- 📊 Quantity: TOTALQUANTITY
+- 🏢 Buyer/Importer: BUYER_NAME
+- 🏭 Supplier/Exporter: EXPORTER_NAME, EXPORTER_CODE
+
+**Config File:** `config/malaysia_export_short.yml`
+
+<details>
+<summary>All Columns (10 total)</summary>
+
+```
+BUYER_NAME
+EXPORTER_NAME
+EXPORTER_CODE
+HS_CODE
+HS_CODE_DESCRIPTION
+ORIGIN_COUNTRY
+DESTINATION_COUNTRY
+TOTALVALUE
+TOTALQUANTITY
+MONTHYEAR
+```
+</details>
+
+---
+
+### Malaysia Import F.xlsx
+
+- **Direction:** IMPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: IMP DATE, IMPORTER CODE, IMPORTER NAME, IMPORTER ADDRESS, INVOICE NUMBER, RELEASE DATE
+- 📦 HS Code: HS CODE, HS CODE DESCRIPTION, HS CODE 2, HS CODE 4
+- 💰 Value: TOTAL VALUE USD, TOTAL VALUE MYR, TOTAL VALUE FC, FOB USD, CIF USD, UNIT VALUE USD, UNIT VALUE MYR, TOTAL DUTY
+- 📊 Quantity: GROSS WEIGHT, NET WEIGHT, WEIGHT UNIT, QUANTITY
+- 🏢 Buyer/Importer: IMPORTER CODE, IMPORTER NAME, IMPORTER ADDRESS
+- 🏭 Supplier/Exporter: SUPPLIER NAME, SUPPLIER ADDRESS
+
+**Config File:** `config/malaysia_import_full.yml`
+
+<details>
+<summary>All Columns (45 total)</summary>
+
+```
+DECLARATION NUMBER
+IMP DATE
+IMPORTER CODE
+IMPORTER NAME
+IMPORTER ADDRESS
+ORIGIN COUNTRY
+SUPPLIER NAME
+SUPPLIER ADDRESS
+HS CODE
+HS CODE DESCRIPTION
+PRODUCT DESCRIPTION
+GROSS WEIGHT
+NET WEIGHT
+WEIGHT UNIT
+QUANTITY
+UNIT
+TOTAL VALUE USD
+TOTAL VALUE MYR
+TOTAL VALUE FC
+CURRENCY
+FOB USD
+CIF USD
+FREIGHT
+MALAYSIA PORT
+FOREIGN PORT
+MODE OF TRANSPORT
+ITEM NO
+UNIT VALUE USD
+UNIT VALUE MYR
+STATION CODE MYR
+STATION CODE NAME
+LOCAL COUNTRY CODE
+EXCHANGE RATE
+INVOICE NUMBER
+DI PERCENT
+DI
+ST PERCENT
+ST
+TOTAL DUTY
+OTHER COST
+RELEASE DATE
+INSURANCE
+HS CODE 2
+HS CODE 4
+COUNTRY ISO CODE 2
+```
+</details>
+
+---
+
+### Malaysia Import S.xlsx
+
+- **Direction:** IMPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 100
+
+**Detected Column Types:**
+
+- 📅 Date: IMPORTER_NAME
+- 📦 HS Code: HS_CODE, HS_CODE_DESCRIPTION
+- 💰 Value: TOTALVALUE, TOTALQUANTITY, AVGUNITPRICEUSD
+- 📊 Quantity: TOTALQUANTITY
+- 🏢 Buyer/Importer: IMPORTER_NAME
+- 🏭 Supplier/Exporter: SUPPLIER_NAME
+
+**Config File:** `config/malaysia_import_short.yml`
+
+<details>
+<summary>All Columns (10 total)</summary>
+
+```
+IMPORTER_NAME
+SUPPLIER_NAME
+ORIGIN_COUNTRY
+HS_CODE
+HS_CODE_DESCRIPTION
+MALAYSIA_PORT
+TOTALVALUE
+TOTALQUANTITY
+AVGUNITPRICEUSD
+MONTHYEAR
+```
+</details>
+
+---
+

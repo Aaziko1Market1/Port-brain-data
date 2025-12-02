@@ -1,0 +1,86 @@
+# Auto-generated config for RUSSIA EXPORT FULL
+# Source: Russia Export Full.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: RUSSIA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_TAX_NUMBER
+  hs_code_raw: HS_CODE
+  export_date_raw: EXP_DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: USD_PER_KG
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: RUSSIA
+  direction: EXPORT
+  origin_country_raw: RUSSIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.031109'
+  source_file: Russia Export Full.xlsx
+  detected_columns:
+  - RECORDS_TAG
+  - DECLARATION_NUMBER
+  - EXP_DATE
+  - BUYER_NAME
+  - BUYER_NAME_EN
+  - BUYER_ADDRESS
+  - BUYER_ADDRESS_EN
+  - CUSTOMS_INN_CODE
+  - CUSTOMS_APPLICANT_NAME
+  - CUSTOMS_APPLICANT_ADDRESS
+  - IMPORT_PORT
+  - DESTINATION_COUNTRY
+  - COUNTRY_OF_SHIPMENT
+  - HS_CODE
+  - HS_PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - UNIT
+  - GROSS_WEIGHT_KG
+  - INCOTERMS
+  - NET_WEIGHT_KG
+  - CURRENCY
+  - USD_PER_KG
+  - TOTAL_VALUE_USD
+  - MANUFACTURER
+  - CUSTOMS_CODE
+  - ITEM_NUMBER
+  - INVOICE_NUMBER
+  - EXPORTER_TAX_NUMBER
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - EXPORT_ADDRESS
+  - EXPORT_ADDRESS_EN
+  - AMOUNT_OF_PAYMENT_IN_RUB
+  - CUSTOMS_VALUE_IN_RUB
+  - INVOICE_VALUE_IN_FC
+  - DECLARANT_CODE
+  - DECLARANT_NAME
+  - DECLARANT_ADDRESS
+  - BRAND
+  - HS_CODE_2
+  - HS_CODE_4
+  - COUNTRY_ISO_CODE_2
+  - RECORD_ID
+  needs_review: true

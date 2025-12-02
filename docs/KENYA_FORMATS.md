@@ -1,0 +1,224 @@
+# Kenya Port Data Formats
+
+Generated: 2025-12-01 10:06:58
+
+## Overview
+
+This document describes the port data file formats available for Kenya.
+
+| File | Direction | Format | Rows | Header Row | Date Column | HS Code Column | Value Column |
+|------|-----------|--------|------|------------|-------------|----------------|--------------|
+| Kenya Export F.xlsx | EXPORT | FULL | 2 | 6 | EXP_DATE | HS_CODE | TOTAL_VALUE |
+| Kenya Export S.xlsx | EXPORT | SHORT | 100 | 1 | EXPORTER_NAME | HS_CODE | TOTALVALUE |
+| Kenya Import F.xlsx | IMPORT | FULL | 2 | 6 | IMPORTER_ADDRESS | HS_CODE | TOTAL_VALUE |
+| Kenya Import S.xlsx | IMPORT | SHORT | 100 | 1 | IMPORTER_NAME | HS_CODE | TOTALVALUEUSD |
+
+## Detailed Format Analysis
+
+### Kenya Export F.xlsx
+
+- **Direction:** EXPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: EXP_DATE, EXPORTER_PIN, EXPORTER_NAME, EXPORTER_ADDRESS, REGISTRATION_DATE, SHIPMENT_GROSS_WEIGHT, SHIPMENT_NET_WEIGHT
+- 📦 HS Code: HS_CODE, HS_CODE_DESCRIPTION, HS_CODE_2, HS_CODE_4
+- 💰 Value: TOTAL_VALUE, UNIT_VALUE, TOTAL_VALUE_USD, UNIT_PRICE_USD, FOB_FC, TOTAL_SHIPMENT_FOB_LOCAL, TOTAL_SHIPMENT_CIF_LOCAL
+- 📊 Quantity: QUANTITY, GROSS_WEIGHT, NET_WEIGHT, SHIPMENT_GROSS_WEIGHT, SHIPMENT_NET_WEIGHT
+- 🏢 Buyer/Importer: BUYER_NAME, BUYER_ADDRESS
+- 🏭 Supplier/Exporter: EXPORTER_PIN, EXPORTER_NAME, EXPORTER_ADDRESS
+
+**Config File:** `config/kenya_export_full.yml`
+
+<details>
+<summary>All Columns (49 total)</summary>
+
+```
+RECORD_ID
+RECORDS_TAG
+DESTINATION_PORT
+MODE_OF_TRANSPORT
+EXP_DATE
+ENTRY_NO
+MANIFESTO_NO
+IMP_DECL_FORM_NO
+BILL_OF_LADING
+EXPORTER_PIN
+EXPORTER_NAME
+EXPORTER_ADDRESS
+ORIGIN_COUNTRY
+PORT_OF_DISCHARGE
+BUYER_NAME
+BUYER_ADDRESS
+AGENT_PIN
+AGENT_NAME
+HS_CODE
+HS_CODE_DESCRIPTION
+PRODUCT_DESCRIPTION
+UNIT
+QUANTITY
+TOTAL_VALUE
+UNIT_VALUE
+EXCHANGE_RATE
+TOTAL_VALUE_USD
+UNIT_PRICE_USD
+DESTINATION_COUNTRY
+CFS
+GROSS_WEIGHT
+NET_WEIGHT
+ITEM_NUMBER
+ENTRY_STATUS
+REGISTRATION_DATE
+NO_OF_PACKAGES
+FOB_FC
+CURRENCY
+TOTAL_SHIPMENT_FOB_LOCAL
+TOTAL_SHIPMENT_CIF_LOCAL
+ENTRY_TAX_COMPUTED
+ITEM_TOTAL_TAX_PAYABLE
+ENTRY_TOTAL_TAX_PAYABLE
+SHIPMENT_GROSS_WEIGHT
+SHIPMENT_NET_WEIGHT
+ITEM_FOB_VAL
+HS_CODE_2
+HS_CODE_4
+COUNTRY_ISO_CODE_2
+```
+</details>
+
+---
+
+### Kenya Export S.xlsx
+
+- **Direction:** EXPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 100
+
+**Detected Column Types:**
+
+- 📅 Date: EXPORTER_NAME
+- 📦 HS Code: HS_CODE, HS_CODE_DESCRIPTION
+- 💰 Value: TOTALVALUE, TOTALQUANTITY
+- 📊 Quantity: TOTALQUANTITY
+- 🏢 Buyer/Importer: BUYER_NAME
+- 🏭 Supplier/Exporter: EXPORTER_NAME
+
+**Config File:** `config/kenya_export_short.yml`
+
+<details>
+<summary>All Columns (9 total)</summary>
+
+```
+BUYER_NAME
+EXPORTER_NAME
+HS_CODE
+HS_CODE_DESCRIPTION
+ORIGIN_COUNTRY
+DESTINATION_COUNTRY
+TOTALVALUE
+TOTALQUANTITY
+MONTHYEAR
+```
+</details>
+
+---
+
+### Kenya Import F.xlsx
+
+- **Direction:** IMPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: IMPORTER_ADDRESS, IMPORTER_NAME, IMPORTER_PI, IMP_DATE
+- 📦 HS Code: HS_CODE, HS_CODE_2, HS_CODE_4, HS_CODE_DESCRIPTION
+- 💰 Value: TOTAL_VALUE, TOTAL_VALUE_USD, UNIT_VALUE
+- 📊 Quantity: QUANTITY
+- 🏢 Buyer/Importer: IMPORTER_ADDRESS, IMPORTER_NAME, IMPORTER_PI
+- 🏭 Supplier/Exporter: SUPPLIER_ADDRESS, SUPPLIER_NAME
+
+**Config File:** `config/kenya_import_full.yml`
+
+<details>
+<summary>All Columns (32 total)</summary>
+
+```
+AGENT_ADDRESS
+AGENT_NAME
+AGENT_PIN
+BILL_OF_LADING
+DESTINATION_PORT
+ENTRY_NO
+EXCHANGE_RATE
+HS_CODE
+HS_CODE_2
+HS_CODE_4
+IMPORTER_ADDRESS
+IMPORTER_NAME
+IMPORTER_PI
+IMP_DATE
+IMP_DECL_FORM_NO
+MANIFESTO_NO
+MODE_OF_TRANSPORT
+ORIGIN_COUNTRY
+PORT_OF_DISCHARGE
+PRODUCT_DESCRIPTION
+QUANTITY
+RECORDS_TAG
+RECORD_ID
+SUPPLIER_ADDRESS
+SUPPLIER_NAME
+TOTAL_VALUE
+TOTAL_VALUE_USD
+TYPE_OF_PACK
+UNIT
+UNIT_VALUE
+YEAR
+HS_CODE_DESCRIPTION
+```
+</details>
+
+---
+
+### Kenya Import S.xlsx
+
+- **Direction:** IMPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 100
+
+**Detected Column Types:**
+
+- 📅 Date: IMPORTER_NAME
+- 📦 HS Code: HS_CODE
+- 💰 Value: TOTALVALUEUSD, TOTALQUANTITY, %GTTOTALUSD
+- 📊 Quantity: TOTALQUANTITY, %GTTOTALQUANTITY
+- 🏢 Buyer/Importer: IMPORTER_NAME
+- 🏭 Supplier/Exporter: SUPPLIER_NAME
+
+**Config File:** `config/kenya_import_short.yml`
+
+<details>
+<summary>All Columns (9 total)</summary>
+
+```
+IMPORTER_NAME
+HS_CODE
+TOTALVALUEUSD
+SUPPLIER_NAME
+ORIGIN_COUNTRY
+TOTALQUANTITY
+%GTTOTALUSD
+%GTTOTALQUANTITY
+MONTHYEAR
+```
+</details>
+
+---
+

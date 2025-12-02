@@ -1,0 +1,70 @@
+# Auto-generated config for MONGOLIA IMPORT FULL
+# Source: Mongolia Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MONGOLIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMP_DATE
+  qty_raw: QUANTITY
+  qty_unit_raw: UNIT
+  value_raw: TOTAL_VALUE_IN_USD
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: MONGOLIA
+  direction: IMPORT
+  destination_country_raw: MONGOLIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.965752'
+  source_file: Mongolia Import F.xlsx
+  detected_columns:
+  - RECORD_ID
+  - RECORDS_TAG
+  - IMP_DATE
+  - DECLARATION_NO
+  - IMPORTER_NAME
+  - IMPORTER_NAME_EN
+  - SUPPLIER_NAME
+  - SUPPLIER_NAME_EN
+  - HS_CODE
+  - HS_CODE_DESCRIPTION
+  - HS_CODE_DESCRIPTION_EN
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - MODEL_NUMBER
+  - MODEL_NUMBER_EN
+  - MANUFACTUER
+  - MANUFACTUER_EN
+  - QUANTITY
+  - UNIT
+  - UNIT_EN
+  - TOTAL_VALUE_IN_USD
+  - UNIT_VALUE_USD
+  - ORIGIN_COUNTRY
+  - ORIGIN_COUNTRY_EN
+  - PORT
+  - INCOTERM
+  - HS_CODE_2
+  - HS_CODE_4
+  - COUNTRY_ISO_CODE_2
+  needs_review: true

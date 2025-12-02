@@ -1,0 +1,78 @@
+# Kenya Import SHORT Format Configuration
+# Source: Kenya Revenue Authority (KRA) Import Data - Short/Summary Format
+# File pattern: Kenya Import S.xlsx
+
+reporting_country: "KENYA"
+direction: "IMPORT"
+source_format: "SHORT"
+record_grain: "SUMMARY"
+
+# Excel file structure
+header_row: 1  # 1-indexed (row 1 contains headers)
+data_start_row: 2  # First data row
+
+# Column mappings - using EXACT header names from the file
+# Actual columns: IMPORTER_NAME, HS_CODE, TOTALVALUEUSD, SUPPLIER_NAME, 
+#                 ORIGIN_COUNTRY, TOTALQUANTITY, %GTTOTALUSD, %GTTOTALQUANTITY, MONTHYEAR
+column_mapping:
+  # Entity information
+  buyer_name_raw: "IMPORTER_NAME"
+  supplier_name_raw: "SUPPLIER_NAME"
+  
+  # Product classification
+  hs_code_raw: "HS_CODE"
+  
+  # Geography
+  origin_country_raw: "ORIGIN_COUNTRY"
+  # destination_country_raw is not in file - use default
+  
+  # Dates - MONTHYEAR format like "Oct 2025"
+  monthyear_raw: "MONTHYEAR"
+  
+  # Quantities and values
+  qty_raw: "TOTALQUANTITY"
+  qty_unit_raw: null  # Unit not available in SHORT format
+  value_raw: "TOTALVALUEUSD"  # Main value field (already in USD)
+  
+  # Percentage fields (optional metadata)
+  pct_total_usd: "%GTTOTALUSD"
+  pct_total_qty: "%GTTOTALQUANTITY"
+
+# Data defaults and conversions
+defaults:
+  destination_country_raw: "KENYA"
+  destination_country: "KENYA"
+  reporting_country: "KENYA"
+  direction: "IMPORT"
+
+# Unit conversions (limited for SHORT format)
+unit_conversions:
+  DEFAULT:
+    is_weight: false
+    estimate_kg_per_unit: null
+
+# Value currency
+value_currency:
+  local: "KES"  # Kenyan Shilling
+  usd: "USD"
+
+# Date formats
+date_formats:
+  - "%b %Y"      # Oct 2025
+  - "%B %Y"      # October 2025
+  - "%Y-%m-%d"   # 2025-10-31
+
+# Data quality rules (relaxed for SHORT format)
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: true
+  require_origin_country: false  # May be missing in SHORT
+  require_quantity: true
+  min_value_usd: 0.01
+  max_hs_code_length: 10
+
+# Notes
+# - SHORT format has aggregated/summary data
+# - No UNIT column - quantities are totals
+# - No detailed shipment info (no B/L, entry numbers, etc.)

@@ -1,0 +1,78 @@
+# Auto-generated config for TURKEY EXPORT FULL
+# Source: Turkey Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: TURKEY
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_NAME
+  supplier_name_raw: EXPORTER_CODE
+  hs_code_raw: HS_CODE
+  export_date_raw: CLOSING_DATE
+  qty_raw: NET_WEIGHT_KG
+  qty_unit_raw: UNIT
+  value_raw: CALCULATED_ITEM_VALUE_USD
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: TURKEY
+  direction: EXPORT
+  origin_country_raw: TURKEY
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.072819'
+  source_file: Turkey Export F.xlsx
+  detected_columns:
+  - BUYER_NAME
+  - CALCULATED_ITEM_VALUE_USD
+  - CALCULATED_TOTAL_VALUE_USD
+  - CLOSING_DATE
+  - COUNTRY_ISO_CODE_2
+  - CURRENCY
+  - CUSTOMS_OFFICE_CODE
+  - CUSTOMS_OFFICE_NAME
+  - CUSTOMS_OFFICE_NAME_EN
+  - DESTINATION_COUNTRY
+  - DESTINATION_COUNTRY_CODE
+  - EXPORTER_CODE
+  - EXPORTER_NAME
+  - EXPORTER_NAME_EN
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - HS_CODE_DESCRIPTION_EN
+  - INCOTERMS
+  - INVOICE_AMOUNT
+  - ITEM_NO
+  - ITEM_REGIME_CODE
+  - ITEM_REGIME_NAME
+  - NET_WEIGHT_KG
+  - ORIGIN_COUNTRY
+  - ORIGIN_COUNTRY_CODE
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_EN
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGISTRATION_DATE
+  - REGISTRATION_NO
+  - STATISTICAL_VALUE_USD
+  - STATUTE_STATEMENT
+  - UNIT
+  needs_review: true

@@ -1,0 +1,77 @@
+# Auto-generated config for PANAMA IMPORT FULL
+# Source: Panama Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PANAMA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_NAME
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_NAME
+  qty_raw: GROSS_WEIGHT
+  qty_unit_raw: UNIT
+  value_raw: TOTAL_TAX_TO_PAY
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: PANAMA
+  direction: IMPORT
+  destination_country_raw: PANAMA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.004537'
+  source_file: Panama Import F.xlsx
+  detected_columns:
+  - CALCULATED_TAX
+  - CONTROL_DIGITAL
+  - COUNTRY_ISO_CODE_2
+  - CUSTOMS_NAME
+  - CUSTOMS_ZONE
+  - DECLARATION_NUMBER
+  - DEPARTURE_PORT_OR_PREMISES
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - ICDDP
+  - IMPORTER_NAME
+  - IMPORT_TAX
+  - IMP_DATE
+  - ISC
+  - ITBMS
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PACKAGES
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECINTO_ENCLOSURE
+  - RECORDS_TAG
+  - RECORD_ID
+  - RUC_IMPORTER_ID
+  - SUPPLIER_NAME
+  - TOTAL_TAX_TO_PAY
+  - TRANSPORT_TYPE
+  - UNIT
+  - USD_CIF
+  - USD_FOB
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_NAME_EN
+  needs_review: true

@@ -1,0 +1,56 @@
+# GTI-OS Standardization Mapping - India Export Data
+# Maps raw column names from Indian export files to standardized schema
+
+reporting_country: "INDIA"
+direction: "EXPORT"
+source_format: "FULL"
+
+# Column mapping: standardized_field -> raw_column_name
+# Use null if field doesn't exist in this data source
+column_mapping:
+  # Entity names
+  buyer_name_raw: "buyer_name"
+  supplier_name_raw: "supplier_name"
+  
+  # Product classification
+  hs_code_raw: "hs_code"
+  goods_description: "goods_description"
+  
+  # Geography
+  origin_country_raw: "origin_country"
+  destination_country_raw: "destination_country"
+  
+  # Dates
+  export_date_raw: "shipment_date"  # India uses shipment_date for exports
+  import_date_raw: null              # Not applicable for exports
+  shipment_date_raw: "shipment_date"
+  
+  # Quantities
+  qty_raw: "quantity_kg"
+  qty_unit_raw: "unit"
+  
+  # Values
+  value_raw: "fob_value_usd"
+  
+  # Logistics
+  vessel_name: "vessel_name"
+  container_id: "container_id"
+  port_loading: "port_loading"
+  port_unloading: "port_unloading"
+
+# Unit specifications
+units:
+  weight_unit: "KG"        # Default weight unit in source data
+  value_currency: "USD"    # Currency in source data
+
+# Value type (FOB, CIF, or CUSTOMS)
+value_type: "FOB"
+
+# Default values
+defaults:
+  origin_country: "INDIA"  # Always INDIA for exports
+  
+# Notes:
+# - India export data typically uses shipment_date
+# - FOB values are standard for exports
+# - Weight is already in KG in sample data

@@ -1,0 +1,66 @@
+# Auto-generated config for NIGERIA IMPORT FULL
+# Source: Nigeria Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: NIGERIA
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ID
+  supplier_name_raw: SUPPLIER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ID
+  qty_raw: VOLUME_KG
+  qty_unit_raw: TODO_UNIT
+  value_raw: CIF_IN_NIGERIA
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: NIGERIA
+  direction: IMPORT
+  destination_country_raw: NIGERIA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.989401'
+  source_file: Nigeria Import F.xlsx
+  detected_columns:
+  - CIF_IN_NIGERIA
+  - CIF_USD
+  - CONTAINER_NUMBER
+  - CUSTOM
+  - FOB_IN_NIGERIA
+  - FOB_USD
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - IMPORTER_ID
+  - IMPORTER_NAME
+  - ITEMS
+  - ITEMS_CNT
+  - ORIGIN_COUNTRY
+  - RECEIPT
+  - RECEIPT_DATE
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGISTRY
+  - REGISTRY_DATE
+  - SUPPLIER_NAME
+  - SUPPLY_COUNTRY
+  - TAX_NIGERIA
+  - VOLUME_KG
+  needs_review: true

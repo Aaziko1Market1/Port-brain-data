@@ -1,0 +1,69 @@
+# Auto-generated config for NICARAGUA EXPORT FULL
+# Source: Nicaragua Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: NICARAGUA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER NAME EN
+  supplier_name_raw: EXPORTER NAME EN
+  hs_code_raw: HS CODE
+  export_date_raw: EXPORTER NAME EN
+  qty_raw: GROSS WEIGHT
+  qty_unit_raw: UNIT MEASURE 1
+  value_raw: FOB VALUE
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION COUNTRY EN
+defaults:
+  reporting_country: NICARAGUA
+  direction: EXPORT
+  origin_country_raw: NICARAGUA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.977769'
+  source_file: Nicaragua Export F.xlsx
+  detected_columns:
+  - HS CODE
+  - PRODUCT DESCRIPTION EN
+  - TAX ID
+  - EXPORTER NAME EN
+  - BUYER NAME EN
+  - GROSS WEIGHT
+  - NET WEIGHT
+  - FOB VALUE
+  - QUANTITY
+  - UNIT MEASURE 1
+  - CUSTOM EN
+  - DESTINATION COUNTRY EN
+  - EXPORTER NAME
+  - BUYER NAME
+  - EXP DATE
+  - PRODUCT DESCRIPTION
+  - UNIT OF MEASUREMENT 1 EN
+  - UNIT MEASURE 2
+  - UNIT OF MEASUREMENT 2 EN
+  - CORRELATIVE
+  - INSURANCE POLICY NUMBER
+  - CUSTOM SEAL
+  - CUSTOM AGENCY ID
+  - CUSTOM AGENCY NAME
+  - CUSTOM AGENCY NAME EN
+  - HS CODE 2
+  - HS CODE 4
+  - COUNTRY ISO CODE 2
+  needs_review: true

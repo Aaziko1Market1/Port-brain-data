@@ -1,0 +1,91 @@
+# Auto-generated config for PERU IMPORT FULL
+# Source: Peru Import F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: PERU
+direction: IMPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: IMPORTER_ADDRESS
+  supplier_name_raw: SHIPPER_NAME
+  hs_code_raw: HS_CODE
+  import_date_raw: IMPORTER_ADDRESS
+  qty_raw: COMMERCIAL_QUANTITY
+  qty_unit_raw: COMMERCIAL_MEASURE_UNIT
+  value_raw: USD_CIF
+  origin_country_raw: ORIGIN_COUNTRY
+  destination_country_raw: TODO_DESTINATION
+defaults:
+  reporting_country: PERU
+  direction: IMPORT
+  destination_country_raw: PERU
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:58.022089'
+  source_file: Peru Import F.xlsx
+  detected_columns:
+  - ACQUISITION_COUNTRY
+  - ADVALOREM
+  - COMMERCIAL_MEASURE_UNIT
+  - COMMERCIAL_QUANTITY
+  - CUSTOM
+  - CUSTOMS_AGENT
+  - DUA_ID
+  - GROSS_WEIGHT
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_CODE_DESCRIPTION
+  - IMPORTER_ADDRESS
+  - IMPORTER_DEPARTMENT
+  - IMPORTER_DISTRICT
+  - IMPORTER_NAME
+  - IMPORTER_PHONE
+  - IMPORTER_STATE
+  - IMP_DATE
+  - INCOTERM
+  - LOCAL_TAX
+  - MANUFACTURE_YEAR
+  - NET_WEIGHT
+  - ORIGIN_COUNTRY
+  - PACKAGES_QUANTITY
+  - PACKAGE_TYPE
+  - PRODUCT_DESCRIPTION
+  - PRODUCT_DESCRIPTION_1
+  - PRODUCT_DESCRIPTION_2
+  - PRODUCT_DESCRIPTION_3
+  - PRODUCT_DESCRIPTION_4
+  - PRODUCT_STATUS
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - RUC_IMPORTER_ID
+  - SERIE
+  - SHIPPER_NAME
+  - SHIPPING_PORT
+  - TRANSPORT_COMPANY
+  - TRANSPORT_TYPE
+  - UNIT
+  - USD_CIF
+  - USD_CIF_PER_UNIT
+  - USD_FOB
+  - USD_FREIGHT
+  - USD_INSURANCE
+  - BANK
+  - IMPORTER_FAX
+  - IMPORTER_NAME_EN
+  needs_review: true

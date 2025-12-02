@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(npm run build:*)",
+      "Bash(python scripts/qa_kenya_port_data_accuracy.py:*)",
+      "Bash(python scripts/check_kenya_db_state.py:*)",
+      "Bash(curl:*)",
+      "Bash(python -m json.tool:*)",
+      "Bash(python scripts/comprehensive_kenya_validation.py:*)",
+      "Bash(python scripts/final_kenya_validation.py:*)",
+      "Bash(python -c:*)",
+      "Bash(python scripts/run_identity_engine.py:*)",
+      "Bash(Volume:{r[4]:.2f}kg)",
+      "Bash(python scripts/qa_country_basic_check.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

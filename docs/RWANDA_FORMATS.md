@@ -1,0 +1,292 @@
+# Rwanda Port Data Formats
+
+Generated: 2025-12-01 10:06:58
+
+## Overview
+
+This document describes the port data file formats available for Rwanda.
+
+| File | Direction | Format | Rows | Header Row | Date Column | HS Code Column | Value Column |
+|------|-----------|--------|------|------------|-------------|----------------|--------------|
+| Rwanda Export F.xlsx | EXPORT | FULL | 2 | 6 | DATE_LIQUIDATION | HS_CODE | CIF |
+| Rwanda Export S.xlsx | EXPORT | SHORT | 17 | 1 | EXPORTER_NAME | HS_CODE | TOTALVALUEUSD |
+| Rwanda Import F.xlsx | IMPORT | FULL | 2 | 6 | DATE_LIQUIDATION | HS_CODE | CIF |
+| Rwanda Import S.xlsx | IMPORT | SHORT | 77 | 1 | IMPORTER_NAME | HS_CODE | TOTALVALUEUSD |
+
+## Detailed Format Analysis
+
+### Rwanda Export F.xlsx
+
+- **Direction:** EXPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: DATE_LIQUIDATION, DATE_QUITTANCE, EXPORTER_NAME, EXP_DATE, IMPORTS_DUTY
+- 📦 HS Code: HS_CODE, HS_CODE_2, HS_CODE_4, TARIFF_RATE
+- 💰 Value: CIF, CIF_USD, FOB, FOB_USD, TOTAL_DUTY_AND_TAXES
+- 📊 Quantity: GROSS_WEIGHT, NET_WEIGHT, QUANTITY
+- 🏢 Buyer/Importer: BUYER_NAME
+- 🏭 Supplier/Exporter: EXPORTER_NAME
+
+**Config File:** `config/rwanda_export_full.yml`
+
+<details>
+<summary>All Columns (73 total)</summary>
+
+```
+AGREMENT
+AUO
+BUYER_NAME
+CATEGORY
+CHAPTER
+CIF
+CIF_USD
+CLEARING_AGENCY_NAME
+CLEARING_CODE
+COMPUTER_FEES
+CPC_GEN
+CPC_NAT
+CUSTOMS_BORDER_POST
+DATE_LIQUIDATION
+DATE_QUITTANCE
+DESTINATION_COUNTRY
+ELEVEN_DIGITS
+EXCISE_DUTY
+EXIT_OFFICE
+EXPORTER_NAME
+EXP_DATE
+FLUX_1
+FLUX_2
+FOB
+FOB_USD
+FOUR_DIGITS
+FREIGHT
+GROSS_WEIGHT
+HEADING
+HS_CODE
+HS_CODE_2
+HS_CODE_4
+HS_DESCRIPTION
+IDL
+IMPORTS_DUTY
+INLAND
+INSURANCE
+ITEM_NUMBER
+MANIFESTE
+MOT
+MVF
+NATIONALITY_VEHICLE
+NET_WEIGHT
+NO_LICENCE
+NO_LIQUIDATION
+NO_PLATE
+NO_QUITTANCE
+NO_SAD
+NUMBER_OF_PACKAGE
+OFFICE
+ORIGIN_COUNTRY
+OTHER_COSTS
+PRECLEANCE
+PREVIOUS_DOCUMENT
+PRODUCT_DESCRIPTION
+PROVINCE_COUNTRY
+PUBLIC_WAREHOUSE
+PV
+QUALITY_INSPECTION_FEES
+QUANTITY
+RECORDS_TAG
+RECORD_ID
+REGIME
+SERIE_FLOW
+SERIE_LIQUIDATION
+SERIE_QUITTANCE
+TARIFF_RATE
+TIN
+TOTAL_DUTY_AND_TAXES
+UNIT
+VAT
+WAREHOUSE
+WHT
+```
+</details>
+
+---
+
+### Rwanda Export S.xlsx
+
+- **Direction:** EXPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 17
+
+**Detected Column Types:**
+
+- 📅 Date: EXPORTER_NAME
+- 📦 HS Code: HS_CODE
+- 💰 Value: TOTALVALUEUSD, %GTTOTALUSD, TOTALWEIGHT
+- 📊 Quantity: TOTALWEIGHT, %GTTOTALWEIGHT
+- 🏢 Buyer/Importer: BUYER_NAME
+- 🏭 Supplier/Exporter: EXPORTER_NAME
+
+**Config File:** `config/rwanda_export_short.yml`
+
+<details>
+<summary>All Columns (10 total)</summary>
+
+```
+BUYER_NAME
+EXPORTER_NAME
+HS_CODE
+HS_DESCRIPTION
+ORIGIN_COUNTRY
+TOTALVALUEUSD
+%GTTOTALUSD
+TOTALWEIGHT
+%GTTOTALWEIGHT
+MONTHYEAR
+```
+</details>
+
+---
+
+### Rwanda Import F.xlsx
+
+- **Direction:** IMPORT
+- **Format:** FULL
+- **Header Row:** 6
+- **Sample Rows:** 2
+
+**Detected Column Types:**
+
+- 📅 Date: DATE_LIQUIDATION, DATE_QUITTANCE, IMPORTER_NAME, IMPORTS_DUTY, IMP_DATE
+- 📦 HS Code: HS_CODE, HS_CODE_2, HS_CODE_4, TARIFF_RATE
+- 💰 Value: CIF, CIF_USD, FOB, FOB_USD, TOTAL_DUTY_AND_TAXES
+- 📊 Quantity: GROSS_WEIGHT, NET_WEIGHT, QUANTITY
+- 🏢 Buyer/Importer: IMPORTER_NAME
+- 🏭 Supplier/Exporter: SUPPLIER_NAME
+
+**Config File:** `config/rwanda_import_full.yml`
+
+<details>
+<summary>All Columns (74 total)</summary>
+
+```
+AGREMENT
+AUO
+CATEGORY
+CHAPTER
+CIF
+CIF_USD
+CLEARING_AGENCY_NAME
+CLEARING_CODE
+COMPUTER_FEES
+COUNTRY_ISO_CODE_2
+CPC_GEN
+CPC_NAT
+CUSTOMS_BORDER_POST
+DATE_LIQUIDATION
+DATE_QUITTANCE
+DESTINATION_COUNTRY
+ELEVEN_DIGITS
+EXCISE_DUTY
+EXIT_OFFICE
+FLUX_1
+FLUX_2
+FOB
+FOB_USD
+FOUR_DIGITS
+FREIGHT
+GROSS_WEIGHT
+HEADING
+HS_CODE
+HS_CODE_2
+HS_CODE_4
+HS_DESCRIPTION
+IDL
+IMPORTER_NAME
+IMPORTS_DUTY
+IMP_DATE
+INLAND
+INSURANCE
+ITEM_NUMBER
+MANIFESTE
+MOT
+MVF
+NATIONALITY_VEHICLE
+NET_WEIGHT
+NO_LICENCE
+NO_LIQUIDATION
+NO_PLATE
+NO_QUITTANCE
+NO_SAD
+NUMBER_OF_PACKAGE
+OFFICE
+ORIGIN_COUNTRY
+OTHER_COSTS
+PRECLEANCE
+PREVIOUS_DOCUMENT
+PRODUCT_DESCRIPTION
+PROVINCE_COUNTRY
+PUBLIC_WAREHOUSE
+PV
+QUALITY_INSPECTION_FEES
+QUANTITY
+RECORDS_TAG
+RECORD_ID
+REGIME
+SERIE_FLOW
+SERIE_LIQUIDATION
+SERIE_QUITTANCE
+SUPPLIER_NAME
+TARIFF_RATE
+TIN
+TOTAL_DUTY_AND_TAXES
+UNIT
+VAT
+WAREHOUSE
+WHT
+```
+</details>
+
+---
+
+### Rwanda Import S.xlsx
+
+- **Direction:** IMPORT
+- **Format:** SHORT
+- **Header Row:** 1
+- **Sample Rows:** 77
+
+**Detected Column Types:**
+
+- 📅 Date: IMPORTER_NAME
+- 📦 HS Code: HS_CODE
+- 💰 Value: TOTALVALUEUSD, %GTTOTALUSD, TOTALWEIGHT
+- 📊 Quantity: TOTALWEIGHT, %GTTOTALWEIGHT
+- 🏢 Buyer/Importer: IMPORTER_NAME
+- 🏭 Supplier/Exporter: SUPPLIER_NAME
+
+**Config File:** `config/rwanda_import_short.yml`
+
+<details>
+<summary>All Columns (10 total)</summary>
+
+```
+SUPPLIER_NAME
+IMPORTER_NAME
+HS_CODE
+HS_DESCRIPTION
+ORIGIN_COUNTRY
+TOTALVALUEUSD
+%GTTOTALUSD
+TOTALWEIGHT
+%GTTOTALWEIGHT
+MONTHYEAR
+```
+</details>
+
+---
+

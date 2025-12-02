@@ -1,0 +1,69 @@
+# Auto-generated config for MEXICO EXPORT FULL
+# Source: Mexico Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: MEXICO
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: BUYER_ADDRESS
+  supplier_name_raw: EXPORTER_ADDRESS
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_ADDRESS
+  qty_raw: COMERCIAL_QUANTITY
+  qty_unit_raw: COMERCIAL_UNIT
+  value_raw: FOB_UNIT_USD
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: MEXICO
+  direction: EXPORT
+  origin_country_raw: MEXICO
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.952714'
+  source_file: Mexico Export F.xlsx
+  detected_columns:
+  - BUYER_ADDRESS
+  - BUYER_CITY
+  - BUYER_NAME
+  - COMERCIAL_QUANTITY
+  - COMERCIAL_UNIT
+  - COUNTRY_ISO_CODE_2
+  - CUSTOM_STATE_PORT
+  - DESTINATION_COUNTRY
+  - DOCUMENT_NO
+  - EXPORTER_ADDRESS
+  - EXPORTER_CITY
+  - EXPORTER_NAME
+  - EXPORTER_PROVINCE_STATE
+  - EXP_DATE
+  - FOB_UNIT_USD
+  - FOB_USD
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - HS_DESCRIPTION
+  - LOCAL_PORT_POL
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - TOTAL_WEIGHT
+  - TRANSPORT
+  - UNIT
+  needs_review: true

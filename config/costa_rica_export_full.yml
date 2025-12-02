@@ -1,0 +1,73 @@
+# Auto-generated config for COSTA_RICA EXPORT FULL
+# Source: Costarica Export F.xlsx
+# REVIEW REQUIRED: Verify column mappings before use
+
+reporting_country: COSTA RICA
+direction: EXPORT
+source_format: FULL
+record_grain: LINE_ITEM
+header_row: 6
+data_start_row: 7
+column_mapping:
+  buyer_name_raw: TODO_BUYER
+  supplier_name_raw: EXPORTER_NAME
+  hs_code_raw: HS_CODE
+  export_date_raw: EXPORTER_NAME
+  qty_raw: GROSS_KG
+  qty_unit_raw: FOB_UNIT_USD
+  value_raw: FOB_UNIT_USD
+  origin_country_raw: TODO_ORIGIN
+  destination_country_raw: DESTINATION_COUNTRY
+defaults:
+  reporting_country: COSTA RICA
+  direction: EXPORT
+  origin_country_raw: COSTA RICA
+date_formats:
+- '%Y-%m-%d'
+- '%d/%m/%Y'
+- '%Y/%m/%d'
+- '%d-%m-%Y'
+quality_rules:
+  require_hs_code: true
+  require_importer: true
+  require_value_usd: false
+  require_origin_country: false
+  require_quantity: false
+_metadata:
+  auto_generated: true
+  generated_at: '2025-12-01T10:06:57.865848'
+  source_file: Costarica Export F.xlsx
+  detected_columns:
+  - AGENT_NAME
+  - COD_LOC
+  - COUNTRY_ISO_CODE_2
+  - CUSTOMS
+  - DECLARANT
+  - DECLARATION_NUMBER
+  - DESTINATION_COUNTRY
+  - DUA_NUMBER
+  - EXPORTER_NAME
+  - EXP_DATE
+  - FOB_UNIT_USD
+  - FOB_USD
+  - GROSS_KG
+  - HS_CODE
+  - HS_CODE_2
+  - HS_CODE_4
+  - ITEM
+  - LOCATION
+  - MODALITY
+  - NET_KG
+  - NUMBER_AGENT
+  - PACKAGES
+  - PRODUCT_DESCRIPTION
+  - QUANTITY
+  - RECORDS_TAG
+  - RECORD_ID
+  - REGIME
+  - RUC
+  - TRANSPORTATION_MODE
+  - UNIT
+  - HS_CODE_DESCRIPTION
+  - EXPORTER_NAME_EN
+  needs_review: true
