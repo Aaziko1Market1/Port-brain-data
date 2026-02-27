@@ -35,7 +35,9 @@ from api.routers import (
     buyer_hunter_router,
     admin_upload_router,
     dashboard_router,
-    products_router
+    products_router,
+    favorites_router,
+    suppliers_router
 )
 
 # Configure logging
@@ -126,6 +128,8 @@ app.include_router(buyer_hunter_router)
 app.include_router(admin_upload_router)
 app.include_router(dashboard_router)
 app.include_router(products_router)
+app.include_router(favorites_router)
+app.include_router(suppliers_router)
 
 
 # Root endpoint

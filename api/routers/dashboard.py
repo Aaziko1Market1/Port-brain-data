@@ -87,6 +87,23 @@ class RecentSearchesResponse(BaseModel):
     total: int
 
 
+class LiveUpdateItem(BaseModel):
+    """Single live update item."""
+    id: str
+    type: str
+    title: str
+    description: str
+    timestamp: str
+    buyer_uuid: Optional[str] = None
+    country: Optional[str] = None
+
+
+class LiveUpdatesResponse(BaseModel):
+    """Response for live updates."""
+    items: List[LiveUpdateItem]
+    total: int
+
+
 # =====================================================================
 # ENDPOINTS
 # =====================================================================
@@ -320,3 +337,53 @@ def get_recent_searches(
     except Exception as e:
         logger.error(f"Error fetching recent searches: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Error fetching recent searches: {str(e)}")
+
+
+@router.get("/live-updates", response_model=LiveUpdatesResponse)
+def get_live_updates(
+    limit: int = Query(20, ge=1, le=100, description="Number of updates"),
+    db: DatabaseManager = Depends(get_db)
+):
+    """
+    Get live data updates - recent trade activity.
+    
+    Returns recent shipments and trade events.
+    """
+    try:
+        query = """
+            SELECT 
+                transaction_id::text,
+                destination_country,
+                hs_code_6,
+                goods_description,
+                customs_value_usd,
+                shipment_date::text,
+                buyer_uuid::text
+            FROM global_trades_ledger
+            WHERE shipment_date IS NOT NULL
+            ORDER BY shipment_date DESC, created_at DESC
+            LIMIT %s
+        """
+        results = db.execute_query(query, (limit,))
+        
+        items = []
+        for row in (results or []):
+            value = float(row[4]) if row[4] else 0
+            items.append(LiveUpdateItem(
+                id=row[0] or "",
+                type="shipment",
+                title=f"Trade to {row[1] or 'Unknown'}",
+                description=f"{row[3] or row[2] or 'Goods'} - ${value:,.0f}",
+                timestamp=row[5] or "",
+                buyer_uuid=row[6],
+                country=row[1]
+            ))
+        
+        return LiveUpdatesResponse(
+            items=items,
+            total=len(items)
+        )
+        
+    except Exception as e:
+        logger.error(f"Error fetching live updates: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Error fetching live updates: {str(e)}")

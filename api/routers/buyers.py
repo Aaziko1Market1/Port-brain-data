@@ -52,6 +52,52 @@ def _safe_float(value) -> Optional[float]:
         return None
 
 
+@router.get("/hs-codes")
+def list_buyer_hs_codes(
+    limit: int = Query(100, ge=1, le=500, description="Number of HS codes"),
+    country: Optional[str] = Query(None, description="Filter by buyer country"),
+    db: DatabaseManager = Depends(get_db)
+):
+    """List HS codes traded by buyers with aggregated stats."""
+    try:
+        where_clause = "WHERE hs_code_6 IS NOT NULL"
+        params = []
+        if country:
+            where_clause += " AND destination_country = %s"
+            params.append(country.upper())
+        
+        query = f"""
+            SELECT 
+                hs_code_6,
+                goods_description,
+                COUNT(*) as shipment_count,
+                SUM(customs_value_usd) as total_value,
+                COUNT(DISTINCT buyer_uuid) as buyer_count,
+                COUNT(DISTINCT destination_country) as country_count
+            FROM global_trades_ledger
+            {where_clause}
+            GROUP BY hs_code_6, goods_description
+            ORDER BY SUM(customs_value_usd) DESC NULLS LAST
+            LIMIT %s
+        """
+        params.append(limit)
+        results = db.execute_query(query, tuple(params))
+        
+        items = []
+        for row in (results or []):
+            items.append({
+                "hs_code_6": row[0],
+                "description": row[1] or "",
+                "shipment_count": row[2] or 0,
+                "total_value_usd": float(row[3]) if row[3] else 0,
+                "buyer_count": row[4] or 0,
+                "country_count": row[5] or 0
+            })
+        return {"items": items, "total": len(items), "limit": limit}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error listing HS codes: {str(e)}")
+
+
 @router.get("", response_model=BuyerListResponse)
 def list_buyers(
     country: Optional[str] = Query(None, description="Filter by buyer country"),
@@ -378,3 +424,258 @@ def get_buyer_trade_history(
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching trade history: {str(e)}")
+
+
+@router.get("/{buyer_uuid}/suppliers")
+def get_buyer_suppliers(
+    buyer_uuid: str,
+    limit: int = Query(10, ge=1, le=100),
+    db: DatabaseManager = Depends(get_db)
+):
+    """Get suppliers that have traded with this buyer."""
+    try:
+        UUID(buyer_uuid)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid buyer UUID format")
+    try:
+        query = """
+            SELECT 
+                g.supplier_uuid::text,
+                o.name_normalized as supplier_name,
+                o.country_iso as supplier_country,
+                COUNT(*) as shipment_count,
+                SUM(g.customs_value_usd) as total_value_usd,
+                MAX(g.shipment_date)::text as last_shipment_date
+            FROM global_trades_ledger g
+            LEFT JOIN organizations_master o ON g.supplier_uuid = o.org_uuid
+            WHERE g.buyer_uuid = %s::uuid AND g.supplier_uuid IS NOT NULL
+            GROUP BY g.supplier_uuid, o.name_normalized, o.country_iso
+            ORDER BY SUM(g.customs_value_usd) DESC NULLS LAST
+            LIMIT %s
+        """
+        results = db.execute_query(query, (buyer_uuid, limit))
+        items = []
+        for row in (results or []):
+            items.append({
+                "supplier_uuid": row[0],
+                "supplier_name": row[1] or "Unknown",
+                "supplier_country": row[2],
+                "shipment_count": row[3] or 0,
+                "total_value_usd": float(row[4]) if row[4] else 0,
+                "last_shipment_date": row[5]
+            })
+        return {"items": items, "total": len(items), "limit": limit}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching buyer suppliers: {str(e)}")
+
+
+@router.get("/{buyer_uuid}/shipments")
+def get_buyer_shipments(
+    buyer_uuid: str,
+    limit: int = Query(500, ge=1, le=1000),
+    offset: int = Query(0, ge=0),
+    db: DatabaseManager = Depends(get_db)
+):
+    """Get individual shipment records for a buyer."""
+    try:
+        UUID(buyer_uuid)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid buyer UUID format")
+    try:
+        count_query = "SELECT COUNT(*) FROM global_trades_ledger WHERE buyer_uuid = %s::uuid"
+        count_result = db.execute_query(count_query, (buyer_uuid,))
+        total = count_result[0][0] if count_result else 0
+
+        query = """
+            SELECT 
+                transaction_id::text,
+                shipment_date::text,
+                origin_country,
+                destination_country,
+                hs_code_6,
+                goods_description,
+                qty_kg,
+                customs_value_usd,
+                price_usd_per_kg,
+                supplier_uuid::text,
+                vessel_name,
+                port_loading,
+                port_unloading
+            FROM global_trades_ledger
+            WHERE buyer_uuid = %s::uuid
+            ORDER BY shipment_date DESC NULLS LAST
+            LIMIT %s OFFSET %s
+        """
+        results = db.execute_query(query, (buyer_uuid, limit, offset))
+        items = []
+        for row in (results or []):
+            items.append({
+                "transaction_id": row[0],
+                "shipment_date": row[1],
+                "origin_country": row[2],
+                "destination_country": row[3],
+                "hs_code_6": row[4],
+                "goods_description": row[5],
+                "qty_kg": float(row[6]) if row[6] else None,
+                "customs_value_usd": float(row[7]) if row[7] else None,
+                "price_usd_per_kg": float(row[8]) if row[8] else None,
+                "supplier_uuid": row[9],
+                "vessel_name": row[10],
+                "port_loading": row[11],
+                "port_unloading": row[12]
+            })
+        return {"items": items, "total": total, "limit": limit, "offset": offset}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching buyer shipments: {str(e)}")
+
+
+@router.get("/{buyer_uuid}/similar")
+def get_similar_buyers(
+    buyer_uuid: str,
+    limit: int = Query(5, ge=1, le=20),
+    db: DatabaseManager = Depends(get_db)
+):
+    """Find buyers similar to this one based on HS codes and countries."""
+    try:
+        UUID(buyer_uuid)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid buyer UUID format")
+    try:
+        query = """
+            WITH target_hs AS (
+                SELECT DISTINCT hs_code_6
+                FROM global_trades_ledger 
+                WHERE buyer_uuid = %s::uuid AND hs_code_6 IS NOT NULL
+            )
+            SELECT 
+                b.buyer_uuid::text,
+                b.buyer_name,
+                b.buyer_country,
+                b.total_shipments,
+                b.total_value_usd,
+                b.current_risk_level
+            FROM vw_buyer_360 b
+            WHERE b.buyer_uuid != %s::uuid
+              AND b.buyer_uuid IN (
+                  SELECT DISTINCT g2.buyer_uuid
+                  FROM global_trades_ledger g2
+                  WHERE g2.hs_code_6 IN (SELECT hs_code_6 FROM target_hs)
+                    AND g2.buyer_uuid != %s::uuid
+              )
+            ORDER BY b.total_value_usd DESC NULLS LAST
+            LIMIT %s
+        """
+        results = db.execute_query(query, (buyer_uuid, buyer_uuid, buyer_uuid, limit))
+        items = []
+        for row in (results or []):
+            items.append({
+                "buyer_uuid": row[0],
+                "buyer_name": row[1] or "Unknown",
+                "buyer_country": row[2],
+                "total_shipments": row[3] or 0,
+                "total_value_usd": float(row[4]) if row[4] else 0,
+                "risk_level": row[5] or "UNSCORED"
+            })
+        return {"items": items, "total": len(items), "limit": limit}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching similar buyers: {str(e)}")
+
+
+@router.get("/{buyer_uuid}/business-profile")
+def get_buyer_business_profile(
+    buyer_uuid: str,
+    db: DatabaseManager = Depends(get_db)
+):
+    """Get business profile for a buyer - aggregated trade intelligence."""
+    try:
+        UUID(buyer_uuid)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid buyer UUID format")
+    try:
+        query = """
+            SELECT 
+                b.buyer_uuid::text,
+                b.buyer_name,
+                b.buyer_country,
+                b.buyer_classification,
+                b.total_shipments,
+                b.total_value_usd,
+                b.total_qty_kg,
+                b.first_shipment_date::text,
+                b.last_shipment_date::text,
+                b.active_years,
+                b.unique_hs_codes,
+                b.unique_origin_countries,
+                b.unique_suppliers,
+                b.current_risk_level,
+                b.current_risk_score,
+                b.top_hs6,
+                b.top_origin_countries
+            FROM vw_buyer_360 b
+            WHERE b.buyer_uuid = %s::uuid
+        """
+        result = db.execute_query(query, (buyer_uuid,))
+        if not result:
+            raise HTTPException(status_code=404, detail=f"Buyer not found: {buyer_uuid}")
+        
+        row = result[0]
+        top_hs = _parse_jsonb(row[15])
+        top_countries = _parse_jsonb(row[16])
+        
+        # Get top suppliers
+        supplier_query = """
+            SELECT 
+                o.name_normalized,
+                o.country_iso,
+                COUNT(*) as shipments,
+                SUM(g.customs_value_usd) as value
+            FROM global_trades_ledger g
+            JOIN organizations_master o ON g.supplier_uuid = o.org_uuid
+            WHERE g.buyer_uuid = %s::uuid
+            GROUP BY o.name_normalized, o.country_iso
+            ORDER BY SUM(g.customs_value_usd) DESC NULLS LAST
+            LIMIT 5
+        """
+        supplier_results = db.execute_query(supplier_query, (buyer_uuid,))
+        top_suppliers = []
+        for s in (supplier_results or []):
+            top_suppliers.append({
+                "name": s[0] or "Unknown",
+                "country": s[1],
+                "shipments": s[2] or 0,
+                "value_usd": float(s[3]) if s[3] else 0
+            })
+        
+        avg_value = float(row[5]) / int(row[4]) if row[4] and int(row[4]) > 0 else 0
+        
+        return {
+            "buyer_uuid": row[0],
+            "buyer_name": row[1] or "Unknown",
+            "buyer_country": row[2],
+            "classification": row[3] or "Unknown",
+            "total_shipments": row[4] or 0,
+            "total_value_usd": float(row[5]) if row[5] else 0,
+            "total_qty_kg": float(row[6]) if row[6] else 0,
+            "avg_shipment_value": avg_value,
+            "first_shipment_date": row[7],
+            "last_shipment_date": row[8],
+            "active_years": row[9] or 0,
+            "unique_hs_codes": row[10] or 0,
+            "unique_origin_countries": row[11] or 0,
+            "unique_suppliers": row[12] or 0,
+            "risk_level": row[13] or "UNSCORED",
+            "risk_score": _safe_float(row[14]),
+            "top_hs_codes": top_hs,
+            "top_origin_countries": top_countries,
+            "top_suppliers": top_suppliers
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching business profile: {str(e)}")

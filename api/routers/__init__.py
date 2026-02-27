@@ -10,6 +10,8 @@ from .buyer_hunter import router as buyer_hunter_router
 from .admin_upload import router as admin_upload_router
 from .dashboard import router as dashboard_router
 from .products import router as products_router
+from .favorites import router as favorites_router
+from .suppliers import router as suppliers_router
 
 __all__ = [
     'health_router',
@@ -20,5 +22,7 @@ __all__ = [
     'buyer_hunter_router',
     'admin_upload_router',
     'dashboard_router',
-    'products_router'
+    'products_router',
+    'favorites_router',
+    'suppliers_router'
 ]
