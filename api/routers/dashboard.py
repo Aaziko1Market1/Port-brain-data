@@ -254,13 +254,13 @@ def get_dashboard_stats(
         if result and result[0]:
             row = result[0]
             total_buyers = row[0] or 0
-            total_shipments = row[1] or 0
+            total_shipments = int(row[1]) if row[1] else 0
             total_value_usd = float(row[2]) if row[2] else 0.0
             high_risk_buyers = row[3] or 0
             active_buyers_30d = row[4] or 0
             
             # Calculate average shipment value
-            avg_shipment_value = total_value_usd / total_shipments if total_shipments > 0 else 0.0
+            avg_shipment_value = float(total_value_usd) / float(total_shipments) if total_shipments > 0 else 0.0
             
             # Get unique HS codes count from ledger
             hs_query = "SELECT COUNT(DISTINCT hs_code_6) FROM global_trades_ledger WHERE hs_code_6 IS NOT NULL"
